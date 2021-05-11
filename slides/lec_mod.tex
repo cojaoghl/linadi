@@ -1,0 +1,527 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\PP{\mathbb P}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\title[Linadi]{Modulare Arithmetik}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{Goethe Universit\"at Frankfurt}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{Modulo-Schreibweise}
+	\begin{block}{Definition}
+		Seien $x,y\in\ZZ$ und $m\in\ZZ\setminus\cbc 0$.
+		Wir schreiben
+		\begin{align*}
+			x\equiv y\mod m&&\mbox{falls}&&m\mid x-y
+		\end{align*}
+		\emph{Sprich:} ``$x$ is kongruent zu $y$ modulo $m$''
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Modulo-Schreibweise}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $12\equiv -9\mod 3$, denn $3\mid 12-(-9)=21$
+			\item $0\equiv 14\mod 7$, denn $7\mid 0-14=-14$
+			\item $48\equiv 14\mod -2$, denn $-2|34$
+			\item $x\equiv x\mod m$ f\ue r alle $x,m$, weil $m|x-x=0$
+			\item $x\equiv x+m\mod m$ f\ue r alle $x,m$, weil $m|x-(x+m)=-m$
+			\item $x\equiv y\mod m$ genau dann, wenn $y\equiv x\mod m$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Modulo-Schreibweise}
+	\begin{block}{Lemma}
+		Seien $x,y,x',y'\in\ZZ$ und $m\in\ZZ\setminus\cbc 0$.
+		Wenn
+		\begin{align*}
+			x\equiv y\mod m&&\mbox{und}&&x'\equiv y'\mod m,&&\mbox{dann}\\
+			x+x'\equiv y+y'\mod m&&\mbox{und}&&x\cdot x'\equiv y\cdot y'\mod m.
+		\end{align*}
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Angenommen $m|x-y$ und $m|x'-y'$.
+			\item Dann gilt $m|(x-y)+(x'-y')=(x+x')-(y+y')$.
+			\item Ferner $m|x(x'-y')+y'(x-y)=(xx'-yy')$.
+		\end{itemize}	
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Modulo-Schreibweise}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $2\equiv 5\mod 3$ und $1\equiv -5\mod 3$
+			\item $3=2+1\equiv 5+(-5)=0\mod 3$ 
+			\item $2=2\cdot 1\equiv 5\cdot(-5)=-25\mod 3$ 
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Modulo-Schreibweise}
+	\begin{block}{Lemma}
+		Angenommen $x,y\in\ZZ$, $m,n\in\ZZ\setminus\cbc 0$ und $n\mid m$.	
+		Wenn
+		\begin{align*}
+			x\equiv y\mod m&&\mbox{dann}&&x\equiv y\mod n.
+		\end{align*}
+	\end{block}
+	\begin{block}{Beweis}
+		Es gilt	$n\mid m\mid x-y.$
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Modulo-Schreibweise}
+	\begin{block}{Lemma}
+		Angenommen $x,y\in\ZZ$, $m,n\in\ZZ\setminus\cbc 0$ und $\ggt(m,n)=1$.	
+		Wenn
+		\begin{align*}
+			x\equiv y\mod m&&\mbox{und}&&x\equiv y\mod n&&\mbox{dann}&&x\equiv y\mod m\cdot n
+		\end{align*}
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Weil $\ggt(m,n)=1$, sind die Primteiler von $m,n$ verschieden.
+			\item Weil $m\mid x-y$, gilt $w_p(x-y)\geq w_p(m)$ f\ue r alle $p\in\PP$.
+			\item Weil $n\mid x-y$, gilt $w_p(x-y)\geq w_p(n)$ f\ue r alle $p\in\PP$.
+			\item Folglich $w_p(x-y)\geq w_p(m)+w_p(n)=w_p(mn)$ f\ue r alle $p\in\PP$.
+			\item Also $mn|x-y$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der chinesische Restsatz}
+	\begin{block}{Satz}
+		Angenommen $m,n\in\NN$ erf\ue llen $\ggt(m,n)=1$.	
+		Dann gibt es f\ue r je zwei ganze Zahlen $x,y$ eine ganze Zahl $z$, so da\ss\
+		\begin{align*}
+			z\equiv x\mod m&&\mbox{und}&&z\equiv y\mod n.
+		\end{align*}
+	\end{block}
+	\begin{overprint}
+		\onslide<1>
+		\begin{block}{Anmerkung}
+			\begin{itemize}
+				\item wir nennen zwei Zahlen $a,b\in\ZZ$ \emph{teilerfremd} oder \emph{relativ prim}, wenn $\ggt(a,b)=1$.
+				\item ohne die Annahme, da\ss\ $m,n$ teilerfremd sind, trifft die Aussage des chinesischen Restsatzes nicht zu.
+			\end{itemize}	
+		\end{block}
+		\onslide<2>
+		\begin{block}{Bijektive Abbildungen}
+			\begin{itemize}
+				\item Seien $A,B$ Mengen und $f:A\to B$ eine Abbildung.
+				\item $f$ hei\ss t \emph{injektiv}, falls aus $f(a)=f(b)$ folgt, da\ss\ $a=b$.
+				\item $f$ hei\ss t \emph{surjketiv}, falls zu jedem $b\in B$ ein $a\in A$ mit $f(a)=b$ existiert.
+				\item $f$ hei\ss t \emph{bijektiv}, falls beides zutrifft.
+				\item Wenn $f$ bijektiv ist, gibt es eine Umkehrabbildung $f^{-1}:B\to A$.
+			\end{itemize}
+		\end{block}
+		\onslide<3>
+		\begin{block}{Bijektive Abbildungen}
+			\begin{itemize}
+				\item Seien $A,B$ endliche Mengen mit $|A|=|B|$.
+				\item Wenn $f:A\to B$ injektiv ist, dann ist $f$ surjketiv.
+				\item Wenn $f:A\to B$ surjketiv ist, dann ist $f$ injektiv.
+			\end{itemize}
+		\end{block}
+		\onslide<4>
+		\begin{block}{Beweis}
+			\begin{itemize}
+				\item Sei $A=\{0,1,2,\ldots,m\cdot n-1\}$ und $B=\{(i,j):0\leq i< m,\, 0\leq j< n\}$.
+				\item Es gilt $|A|=|B|$.
+				\item Jede Zahl $a\in A$ kann mit Rest durch $m,n$ geteilt werden:
+					\begin{align*}
+						a=p\cdot m+r,&&a=q\cdot n+s&&0\leq r<m,\ 0\leq s<n
+					\end{align*}
+				\item Definiere $f:A\to B$ durch $a\mapsto (r,s)$.
+			\end{itemize}	
+		\end{block}
+		\onslide<5>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Die Abbildung $f$ ist injektiv.
+				\item Denn angenommen $f(a)=f(a')$; dann gilt
+					\begin{align*}
+						a&=p\cdot m+r,&a&=q\cdot n+s\\ a'&=p'\cdot m+r,&a'&=q'\cdot n+s.
+					\end{align*}
+				\item Also $m|a-a'$ und $n|a-a'$.
+			\end{itemize}	
+		\end{block}
+		\onslide<6>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Weil $\ggt(m,n)=1$, folgt $mn\mid a-a'$.
+				\item Weil $0\leq a,a'<mn$, schliessen wir $a-a'=0$; also $f$ ist injektiv.
+				\item Weil $|A|=|B|$ ist $f$ auch surjektiv.
+			\end{itemize}	
+		\end{block}
+		\onslide<7>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Indem wir $x,y$ durch $m,n$ teilen, finden wir $(r,s)\in B$ mit
+					\begin{align*}
+						x\equiv r\mod m,&&&&y\equiv s\mod n.
+					\end{align*}
+				\item Das Urbild $z=f^{-1}(r,s)$ erf\ue llt dann
+					\begin{align*}
+						z\equiv r\equiv x\mod m,&&&&z\equiv s\equiv y\mod n.
+					\end{align*}
+			\end{itemize}	
+		\end{block}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}\frametitle{Der chinesische Restsatz}
+	\begin{block}{Konstruktion}
+		\begin{itemize}
+			\item \emph{Gegeben:} teilerfremde $m,n\in\NN$ und $x,y\in\ZZ$.
+			\item \emph{Gesucht:} $z\in\ZZ$ mit $z\equiv x\mod m$ und $z\equiv y\mod n$.
+			\item Mit dem erweiterten Euklidischen Algorithmus finde $a,b$ mit
+				\begin{align*}
+					am+bn=1.
+				\end{align*}
+			\item Dann gilt
+				\begin{align*}
+					bn&\equiv 1\mod m&bn&\equiv0\mod n\\
+					am&\equiv 0\mod m&am&\equiv1\mod n
+				\end{align*}
+			\item Also erf\ue llt $z=amy+bnx$
+				\begin{align*}
+					z&\equiv x\mod m,&z&\equiv y\mod n.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der chinesische Restsatz}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item \emph{Gegeben:} $m=7$, $n=12$, $x=2$, $y=4$
+			\item Eukldischer Algorithmus:
+				\begin{align*}
+					12&=1\cdot 7+5&&7=1\cdot 5+2&&7=3\cdot 2+1
+				\end{align*}
+			\item Mit $a=-5$ und $b=3$ erhalten wir
+				\begin{align*}
+				am+bn=-5\cdot 7+3\cdot 12=1
+				\end{align*}
+			\item Also lautet die (oder genauer: eine) L\oe sung
+				\begin{align*}
+				z=amy+bnx=-5\cdot 7\cdot 4+3\cdot 12\cdot 2=-68.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Schnelles Potenzieren}
+	\begin{block}{Problemstellung}
+		\begin{itemize}
+			\item Gegeben $x\in\ZZ$ und $\ell,m\in\NN$, finde $z\in\ZZ$ mit
+				\begin{align*}
+					x^\ell\equiv z\mod m.
+				\end{align*}
+			\item \emph{Ziel:} effiziente Berechnung.
+			\item Die Zahl der elementaren Rechenoperationen soll vern\ue nftig in der L\ae nge der Dezimaldarstellungen von $x,m,\ell$ skalieren!
+			\item Au\ss erdem sollen die Zwischenergebnis nicht zu gro\ss\ werden!
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Schnelles Potenzieren}
+	\begin{block}{Algorithmus}
+		\begin{enumerate}
+			\item Bestimme die Darstellung von $\ell$ im Dualsystem:
+				\begin{align*}
+					\ell&=\sum_{i=0}^k\ell_i2^i,&\ell_i&\in\{0,1\},&\ell_k&\neq0,&k\geq0.
+				\end{align*}
+			\item Sei $y_0$ der Divisonsrest von $x$ durch $m$.
+			\item F\ue r $i=1,\ldots,k$:
+			\item $\qquad$sei $y_i$ der Divisionsrest von $y_{i-1}^2$ durch $m$.
+			\item Setze $z=1$.
+			\item F\ue r $i=0,\ldots,k$:
+			\item $\qquad$sei $r$ der Rest von $z\cdot y_i^{\ell_i}$ durch $m$.
+			\item $\qquad$setze $z$ auf den Wert $r$.
+			\item Gib $z$ aus.
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Schnelles Potenzieren}
+	\begin{block}{Anmerkungen}
+		\begin{itemize}
+			\item \emph{Wichtig:} die Schritte 4,7 bilden den Rest bei Division durch $m$.
+			\item Deshalb treten nur mit Zahlen bis zu $(|x|+|m|)^2$ auf.
+			\item Die Zahl der Multiplikationen ist durch $k\leq2(1+\log_2\ell)$ beschr\ae nkt.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Schnelles Potenzieren}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $m=7$, $\ell=29$, $x=2$
+			\item $29=2^4+2^3+2^2+2^0$
+			\item $k=4$, $\ell_0=\ell_2=\ell_3=\ell_4=1$, $\ell_1=0$
+			\item $y_0=2$, $y_1=4$, $y_2=2$, $y_3=4$, $y_4=2$ 
+			\item Folge der $z$-Werte:
+				\begin{align*}
+					1,&&2,&&2,&&4,&&2,&&4
+				\end{align*}
+			\item \emph{Ergebnis:} $z=4$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Zusammenfassung}
+	\begin{itemize}
+		\item Die Modulo-Schreibweise
+		\item Chinesischer Restsatz
+		\item Schnelles Potenzieren
+	\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,571 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\title[Linadi]{Teilbarkeit}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{JWGUFFM}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{Die Division}
+	\begin{block}{Teilen mit Rest}
+		\begin{itemize}
+			\item Seien $y,z$ ganze Zahlen und $z\neq0$.
+			\item Dann gibt es eindeutige ganze Zahlen $q$ und $r$, so da\ss
+				\begin{align*}
+					y&=q\cdot z+r\qquad\mbox{und}\qquad 0\leq r<|z|.
+				\end{align*}
+			\item Wir nennen $q$ den \alert{Quotienten} und $r$ den \alert{Divisionsrest}.
+			\item \emph{Erinnerung:} der \alert{Betrag} von $z$ ist definiert als
+				\begin{align*}
+					|z|=\begin{cases}z&\mbox{ falls }z\geq0,\\-z&\mbox{ falls }z<0. \end{cases}
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Die Division}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $y=17$, $z=3$:
+			\item	$17=5\cdot 3+2$
+			\item $q=5$, $r=2$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Die Division}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $y=-17$, $z=3$:
+			\item	$-17=-6\cdot 3+1$
+			\item $q=-6$, $r=1$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Die Division}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $y=17$, $z=-3$:
+			\item	$17=(-5)\cdot(-3)+2$
+			\item $q=-5$, $r=2$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Das Divisionsverfahren}
+\begin{block}{}
+\begin{itemize}
+\item Angenommen $y,z\in\NN$.
+	\item Tabelliere zun\ae chst die neun Vielfachen
+		\begin{align*}
+		1\cdot z,\quad 2\cdot z,\quad\ldots,\quad 9\cdot z
+		\end{align*}
+	\item Falls $y< 10\cdot z$, bestimme das maximale $q\in\{0,1,\ldots,9\}$ mit $$y\geq q\cdot z.$$
+	\item Der Divisionsrest ist dann $r=y-q\cdot z$.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Das Divisionsverfahren}
+	\begin{block}{}
+		\begin{itemize}
+			\item Nehmen wir nun $y\geq 10\cdot z$ an.
+			\item Sei $y=\sum_{i=0}^\ell y_i10^i$ mit $y_\ell>0$ die Dezimaldarstellung.
+			\item Finde das gr\oe\ss te $k>0$, so da\ss\ 
+				\begin{align*}
+					\sum_{i=k}^\ell y_i10^{i-k}\geq z\enspace;
+				\end{align*}
+				dann ist $\sum_{i=k}^\ell y_i10^{i-k}< 10z$.
+			\item Wie auf der vorherigen Folie finde $q',r'$ mit
+				\begin{align*}
+					\sum_{i=k}^\ell y_i10^{i-k}=q'\cdot z+r',\quad 0\leq r'<z.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Das Divisionsverfahren}
+	\begin{block}{}
+		\begin{itemize}
+			\item Wir erhalten also
+				\begin{align*}
+					y=10^k\cdot q'\cdot z+10^kr'+\sum_{i=0}^{k-1}y_i10^i.
+				\end{align*}
+			\item Wende jetzt das Divisionsverfahren rekursiv an auf
+				\begin{align*}
+					y'=10^kr'+\sum_{i=0}^{k-1}y_i10^i\enspace;
+				\end{align*}
+				wir finden $q''$ und $r<z$ mit
+				\begin{align*}
+					y'=q''\cdot z+r.
+				\end{align*}
+			\item Somit erhalten wir
+				\begin{align*}
+					y=(10^k\cdot q'+q'')z+r.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Das Divisionsverfahren}
+	\begin{block}{Beispiel}
+		\begin{tabular}{ccccccccccc}
+			2&5&7&:&8&=&3&2&\mbox{ Rest }&1\\
+			2&4\\
+			 &1&7\\
+			 &1&6\\
+			 &&1
+		\end{tabular}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Elementare Arithmetik}
+	\begin{itemize}
+		\item Das Divisionsverfahren ben\oe tigt eine Anzahl von elementaren Operationen, die {\itshape im wesentlichen} linear ist in der L\ae nge der Dezimaldarstellungen der beiden Zahlen.
+		\item \Ae hnliches gilt f\ue r die Addition und Subtraktion.
+		\item Lediglich die Multiplikation ben\oe tigt eine quadratische Zahl elementarer Operationen.
+		\item \emph{Hinweis:} es gibt bessere Multiplikationsverfahren, die im wesentlichen nur lineare Zeit ben\oe tigen.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Der Teilbarkeitsbegriff}
+\begin{block}{Definition}
+\begin{itemize}
+\item Eine ganze Zahl $x\neq0$ \emph{teilt} eine ganze Zahl $y$, falls es eine Zahl $q\in\ZZ$ gibt, so da\ss
+	\begin{align*}
+	y=q\cdot x.
+	\end{align*}
+\item Wir nennen dann $x$ einen \emph{Teiler} von $y$.
+\item \emph{Schreibweise:} $x\mid y$ (``$x$ teilt $y$'').
+\item Falls $x$ \emph{nicht} $y$ teilt, schreibt man $x\nmid y$.
+\end{itemize}
+\end{block}	
+\end{frame}
+
+\begin{frame}\frametitle{Der Teilbarkeitsbegriff}
+	\begin{block}{Beispiele}
+		\begin{itemize}
+			\item $3\mid9$, $-3\mid9$, $3\mid-9$, $-3\mid-9$
+			\item $9\nmid 3$, $-3\nmid 1$, $-9\nmid -3$
+			\item Die Zahlen $\pm1$ teilen jede ganze Zahl.
+			\item Die Zahl $0$ wird von jeder ganzen Zahl $x\neq0$ geteilt.
+		\end{itemize}
+	\end{block}	
+\end{frame}
+
+\begin{frame}\frametitle{Der Teilbarkeitsbegriff}
+	\begin{block}{Rechenregeln}
+		\begin{itemize}
+			\item Teilbarkeit ist \alert{transitiv}:
+				\begin{align*}
+					x|y\mbox{ und }y|z\quad\Rightarrow\quad x|z.
+				\end{align*}
+			\item Wenn $x|y$ und $y|x$, dann gilt $x=\pm y$.
+			\item Wenn $x,y>0$ und $x|y$, dann $y\geq x$.
+			\item Wenn $x|y$ und $x|z$, dann $x|y+z$ und $x|y-z$.
+		\end{itemize}
+	\end{block}	
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Definition}
+		\begin{itemize}
+			\item Der \emph{gr\oe\ss te gemeinsame Teiler} von $x,y\in\NN$ ist definiert als
+				\begin{align*}
+					\ggt(x,y)=\max\cbc{z\in\NN:z\mid x\mbox{ and }z\mid y}.
+				\end{align*}
+			\item Das \emph{kleinste gemeinsame Vielfache} von $x,y\in\NN$ ist definiert als
+				\begin{align*}
+					\kgv(x,y)=\min\cbc{z\in\NN:x\mid z\mbox{ und }y\mid z}.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Bemerkung}
+		F\ue r alle $x,y\in\NN$ gilt	
+		\begin{align*}
+			x\cdot y=\ggt(x,y)\cdot\kgv(x,y).
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Der Euklidische Algorithmus}
+		\emph{Ziel:} Berechnung von $\ggt(x,y)$ f\ue r $x,y\in\NN$.
+	\begin{enumerate}
+		\item Falls $x<y$, vertausche $x$ und $y$.
+		\item F\ue hre Divison mit Rest aus, um $q\in\NN_0$ und $z\in\{0,1,\ldots,y-1\}$ zu finden, so da\ss
+			\begin{align*}
+			x=q\cdot y+z.
+			\end{align*}
+		\item Falls $z=0$, gib $y$ als L\oe sung aus und stoppe.
+		\item Sonst bestimme rekursiv $\ggt(y,z)$.
+	\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Satz}
+		Der Eulidische Algorithmus gibt $\ggt(x,y)$ aus.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Wir nehmen $x\geq y$ an und f\ue hren Induktion nach $x+y$.
+			\item Falls $x+y=2$ ist nichts zu zeigen.
+			\item Falls $z=0$ gilt $y\mid x$ und somit $y=\ggt(x,y)$.
+			\item Falls $z>0$ gilt $y\nmid x$ und $\ggt(y,z)\mid x$, also $\ggt(y,z)\leq\ggt(x,y)$.
+			\item Au\ss erdem gilt $\ggt(x,y)\mid z$, also $\ggt(x,y)\leq\ggt(y,z)$.
+			\item Folglich erhalten wir $\ggt(x,y)=\ggt(y,z)$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+	\item $x=154$, $y=30$.
+	\item $154=5\cdot 30+4$.
+	\item $30=7\cdot 4+2$.
+	\item $4=2\cdot2+0$.
+	\item $\Rightarrow$ $\ggt(154,30)=2$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Satz}
+		Angenommen $x,y\leq10^\ell$ f\ue r eine Zahl $\ell$.
+		Dann f\ue hrt der Euklidische Algorithmus h\oe chstens $8(\ell+1)$ Divisionen durch.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Wir betrachten eine Division
+				\begin{align*}
+					x=q\cdot y+z&&(z<y\leq x),
+				\end{align*}
+				die der Algorithmus durchf\ue hrt.
+			\item Falls $y\leq x/2$, erhalten wir $z<x/2$.
+			\item Falls $y>x/2$, folgt aus $q\geq1$, da\ss\ $z=x-qy\leq x/2$.
+			\item Foglich halbiert sich die gr\oe ssere Zahl alle zwei Schritte.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Satz}
+		Angenommen $0<x,y\leq10^\ell$ f\ue r eine Zahl $\ell$.
+		Dann f\ue hrt der Euklidische Algorithmus h\oe chstens $8(\ell+1)$ Divisionen durch.
+	\end{block}
+	\begin{block}{}
+		\begin{itemize}
+			\item Der $\ggt(x,y)$ kann effizient berechnet werden.
+			\item Das $\kgv(x,y)$ kann effizient berechnet werden.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Satz}
+		Seien $x,y,r\in\NN$.
+		Es gibt $a,b\in\ZZ$ mit $a\cdot x+b\cdot y=r$ genau dann, wenn $\ggt(x,y)\mid r.$
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Induktion nach $x+y$; im Fall $x=y=1$ ist nichts zu zeigen.
+			\item Falls $r=ax+by$, so gilt offenbar $\ggt(x,y)\mid r$.
+			\item Nehmen wir nun an, da\ss\ $r=\ggt(x,y)$ und $x\geq y$.
+			\item Falls $y\mid x$, w\ae hle $a=0,b=1$.
+			\item Sonst finde $q\geq0$, $0<z<y$ mit $x=qy+z$.
+			\item Es gilt $r=\ggt(x,y)=\ggt(y,z)$ und $y+z<x+y$.
+			\item Nach Induktion gibt es $c,d\in\ZZ$ mit $r=cy+dz$.
+			\item Wir erhalten $r=cy+d(x-qy)=(c-q)y+dx$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Satz}
+		Seien $x,y,r\in\NN$.
+		Es gibt $a,b\in\ZZ$ mit $a\cdot x+b\cdot y=r$ genau dann, wenn $\ggt(x,y)\mid r.$
+	\end{block}
+	\begin{block}{}
+		\begin{itemize}
+			\item Der Beweis liefert ein effizientes Verfahren zur Berechnung von $a,b$.
+			\item Dieses Verfahren ist als \emph{erweiterter Euklidischer Algorithmus} bekannt.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der gr\oe\ss te gemeinsame Teiler}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $x=154,t=30,z=\ggt(x,y)=2$.
+				\begin{align*}
+					154&=5\cdot 30+4&\Rightarrow&&4&=154-5\cdot 30\\
+					30&=7\cdot 4+2&\Rightarrow&&2&=30-7\cdot 4\\
+					4&=2\cdot 2+0
+				\end{align*}
+			\item Also erhalten wir
+				\begin{align*}
+					2=30-7\cdot 4=30-7\cdot(154-5\cdot30)=36\cdot30-7\cdot 154.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Zusammenfassung}
+\begin{itemize}
+	\item Divisionen mit Rest k\oe nnen effizient durchgef\ue hrt werden (`Schulmethode').
+	\item Begriffe Teilbarkeit, ggT, kgV
+	\item Der Euklidische Algorithmus
+\end{itemize}
+\end{frame}
+
+
+\end{document}

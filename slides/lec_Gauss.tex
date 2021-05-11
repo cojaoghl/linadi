@@ -1,0 +1,808 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\renewcommand\AA{\mathbb A}
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\PP{\mathbb P}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\renewcommand\SS{\mathbb S}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+\newcommand{\trans}{\top}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\newcommand{\im}{\mathrm{im}}
+
+\newcommand{\mytitle}{Lineare Gleichungssysteme}
+
+\title[Linadi]{\mytitle}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{JWGUFFM}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Zeilenumformungen}
+	\begin{itemize}
+	\item F\ue r eine $m\times n$-Matrix $A=(a_{ij})$ f\ue hren wir einige Operationen ein.
+	Das Ergebnis ist jeweils eine $m\times n$-Matrix $B=(b_{ij})$.
+	\item \alert{Zeilenvertauschung:} wir erhalten $B$  durch Vertauschen von zwei Zeilen von $A$; d.h.\ es gibt $1\leq h<k\leq m$ mit
+	\begin{align*}
+		b_{ij}&=\begin{cases}
+			a_{ij}&\mbox{ falls $i\neq h$ und $i\neq k$}\\
+			a_{hj}&\mbox{ falls $i=k$}\\
+			a_{kj}&\mbox{ falls $i=h$}
+		\end{cases}
+	\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Zeilenumformungen}
+	\begin{itemize}
+	\item \alert{Skalierung:} wir multiplizieren die $h$-te Zeile von $A$ mit $c\in\RR\setminus\cbc 0$; d.h.\ 
+	\begin{align*}
+		b_{ij}&=\begin{cases}
+			a_{ij}&\mbox{ falls $i\neq h$}\\
+			c\cdot a_{hj}&\mbox{ falls $i=h$}
+		\end{cases}
+	\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Zeilenumformungen}
+	\begin{itemize}
+		\item \alert{Pivot:} wir addieren ein Vielfaches einer Zeile zu einer anderen; d.h.\ es gibt verschiedene $h,k\in\{1,\ldots,m\}$ und eine Zahl $c\in\RR$, so da\ss\
+	\begin{align*}
+		b_{ij}&=\begin{cases}
+			a_{ij}&\mbox{ falls $i\neq k$}\\
+			c\cdot a_{hj}+a_{kj}&\mbox{ falls $i=k$}
+		\end{cases}
+	\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Definition}
+		Zwei $m\times n$-Matrizen $A,B$ hei\ss en \emph{zeilen\ae quivalent}, falls $B$ aus $A$ durch eine oder mehrere Zeilenumformungen entsteht.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Proposition}
+		Zwei $m\times n$-Matrizen $A,B$ sind genau dann zeilen\ae quivalent, wenn $$\ker(A)=\ker(B).$$
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+	\item Wir beginnen mit der $3\times 3$-Matrix 
+		\begin{align*}
+			A&=\begin{pmatrix}1&-1&2\\1&7&0\\3&-4&6\end{pmatrix}
+		\end{align*}
+		und f\ue hren Zeilenumformungen aus, um die Matrix zu vereinfachen.
+	\item \alert{Pivot:} addiere das $-1$-fache der ersten Zeile zur zweiten Zeile:
+\begin{align*}
+		\begin{pmatrix}
+1&-1&2\\0&8&-2\\3&-4&6
+		\end{pmatrix}
+		\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+	\item \alert{Pivot:} addiere das $-3$-fache der ersten Zeile zur letzten:
+		\begin{align*}
+		\begin{pmatrix}
+			1&-1&2\\0&8&-2\\0&-1&0
+		\end{pmatrix}
+		\end{align*}
+	\item \alert{Zeilenvertauschung:} tausche die zweite und die dritte Zeile:
+		\begin{align*}
+		\begin{pmatrix}
+			1&-1&2\\0&-1&0\\0&8&-2
+		\end{pmatrix}
+		\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+	\item \alert{Skalierung:} multipliziere die zweite Zeile mit $-1$:
+		\begin{align*}
+		\begin{pmatrix}
+			1&-1&2\\0&1&0\\0&8&-2
+		\end{pmatrix}
+		\end{align*}
+	\item \alert{Pivot:} addiere das $-8$-fache der zweiten Zeile zur dritten Zeile:
+		\begin{align*}
+		\begin{pmatrix}
+			1&-1&2\\0&1&0\\0&0&-2
+		\end{pmatrix}
+		\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item \alert{Skalierung:} multipliziere die letzte Zeile mit $-1/2$:
+\begin{align*}
+	B&=\begin{pmatrix} 1&-1&2\\0&1&0\\0&0&1 \end{pmatrix}
+		\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+	\item Den Kern der Matrix $B$ kann man direkt ablesen:
+		\begin{align*}
+			\ker(B)=\cbc 0
+		\end{align*}
+	\item Denn angenommen $u\in\ker(B)$; dann l\oe st $u$ das lineare Gleichungssystem
+		\begin{align*}
+			Bu&=0&&\Leftrightarrow&
+			  &\begin{pmatrix} 1\cdot u_1-1\cdot u_2+2u_3\\ u_2\\ u_3
+			\end{pmatrix}=\begin{pmatrix} 0\\0\\0 \end{pmatrix}\\
+			  &&&\Leftrightarrow&& u_3=0\mbox{ und }u_2=0\mbox{ und }u_1-u_2+2u_3=0
+		\end{align*}
+	\item Weil $A$ und $B$ zeilen\ae quivalent sind, folgt $\ker(A)=\cbc 0$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Zeilenstufenform}
+		Eine $m\times n$-Matrix $A=(a_{ij})$ ist in \emph{Zeilenstufenform}, wenn es ein $k\in\{0,\ldots,m\}$ und Zahlen $h_1,\ldots,h_k\in\{1,\ldots,n\}$ gibt, so da\ss
+	\begin{itemize}
+		\item $h_1<h_2<\cdots<h_k$,
+		\item f\ue r alle $i\in\{1,\ldots,k\}$ gilt $a_{ih_i}\neq0$,
+		\item f\ue r alle $i\in\{1,\ldots,k\}$ und alle $1\leq j<h_i$ gilt $a_{ij}=0$,
+		\item f\ue r alle $k<i\leq m$ und alle $1\leq j\leq n$ gilt $a_{ij}=0$.
+	\end{itemize}
+	\emph{Beispiel:}
+	\begin{align*}
+	\begin{pmatrix}
+		-1&2&3&4&0\\0&0&5&-6&-3\\0&0&0&7&0\\0&0&0&0&0\\0&0&0&0&0
+	\end{pmatrix}&&
+	k=3,\ h_1=1,\ h_2=3,\ h_3=4
+	\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Das Gau\ss sche Eliminationsverfahren}
+	\begin{itemize}
+	\item Sei $A$ eine $m\times n$-Matrix.
+	\item \emph{Ziel:} bestimme eine zeilen\ae quivalente Matrix, die in Zeilenstufenform ist.
+	\item Beginne mit $h=1$ und setze $k=0$.
+	\item Wenn es keine Zeile $i>k$ gibt mit $a_{ih}\neq0$, erh\oe he $h$; wenn $h>n$, stoppe. Sonst wiederhole.
+	\item Wenn es eine Zeile $i>k$ gibt, so da\ss\ $a_{ih}\neq0$, addiere Vielfache dieser Zeile zu den anderen Zeilen $i'>k$, $i'\neq i$, so da\ss\ in diesen Zeilen der $h$-te Eintrag Null wird.
+	\item Erh\oe he anschlie\ss end $h$ und $k$ und vertausche die $i$-te und die $k$-te Zeile.
+	\item Wenn $h>n$ oder $k=m$, stoppe. Sonst wiederhole.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Sei
+			\begin{align*}
+				A&=\begin{pmatrix}
+					-1&1&1\\2&2&-4\\-3&-3&6
+				\end{pmatrix}
+			\end{align*}
+		\item Wir addieren das $2$-fache der ersten Zeile zur zweiten:
+\begin{align*}
+				\begin{pmatrix}
+					-1&1&1\\0&4&-2\\-3&-3&6
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir addieren das $-3$-fache der ersten Zeile zur dritten:
+\begin{align*}
+				\begin{pmatrix}
+					-1&1&1\\0&4&-2\\0&-6&3
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir addieren das $3/2$-fache der zweiten Zeile zur dritten:
+\begin{align*}
+				\begin{pmatrix}
+					-1&1&1\\0&4&-2\\0&0&0
+				\end{pmatrix}
+			\end{align*}
+		\item Die Matrix ist jetzt in Zeilenstufenform.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Betrachte die Matrix
+			\begin{align*}
+				A&=\begin{pmatrix}
+					0&1&1&1\\1&1&0&1\\1&0&1&1
+				\end{pmatrix}
+			\end{align*}
+		\item Wir vertauschen zun\ae chst die erste und die zweite Zeile:
+			\begin{align*}
+			\begin{pmatrix}
+					1&1&0&1\\0&1&1&1\\1&0&1&1
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Jetzt addiere das $-1$-fache der ersten Zeile zur letzten:
+			\begin{align*}
+			\begin{pmatrix}
+					1&1&0&1\\0&1&1&1\\0&-1&1&0
+				\end{pmatrix}
+			\end{align*}
+		\item Als n\ae chstes addiere die zweite Zeile zur letzten:
+			\begin{align*}
+			\begin{pmatrix}
+					1&1&0&1\\0&1&1&1\\0&0&2&1
+				\end{pmatrix}
+			\end{align*}
+		\item Die Matrix ist jetzt in Zeilenstufenform.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Homogene lineare Gleichungssysteme}
+	\begin{itemize}
+		\item Mit dem Gau\ss schen Eliminationsverfahren k\oe nnen wir den Kern einer Matrix bestimmen.
+		\item Anders formuliert: wir k\oe nnen die L\oe sungen des homogenen linearen Gleichungssystems $Au=0$ oder, ausgeschrieben,
+			\begin{align*}
+				a_{11}u_1+\cdots+a_{1n}u_n&=0\\
+										  &\vdots\\
+				a_{m1}u_1+\cdots+a_{mn}u_n&=0
+			\end{align*}
+			berechnen.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Homogene lineare Gleichungssysteme}
+	\begin{itemize}
+		\item Dazu bringen wir die Matrix $A$ zun\ae chst in Zeilenstufenform.
+		\item Sei die $m\times n$-Matrix $B=(b_{ij})$ das Ergebnis.
+		\item Seien ferner $k$, $h_1,\ldots,h_k$ wie in der Definition der Zeilenstufenform.
+		\item Wir w\ae hlen Werte $u_i\in\RR$ f\ue r $i\not\in\{h_1,\ldots,h_k\}$ beliebig aus.
+		\item Dann bestimmen wir r\ue ckw\ae rts f\ue r $\ell=k,\ldots,1$ die restlichen Eintr\ae ge $u_{h_\ell}$:
+			\begin{align*}
+				u_{h_\ell}=-\frac{1}{b_{\ell\, h_\ell}}\sum^n_{j=h_{\ell}+1}b_{\ell j}u_j.
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Betrachte die $3\times 4$-Matrix
+			\begin{align*}
+				A&=\begin{pmatrix}
+					0&1&1&1\\1&1&0&1\\1&0&1&1
+				\end{pmatrix},
+			\end{align*}
+		die wir bereits in Zeilenstufenform gebracht haben:
+			\begin{align*}
+				B&=\begin{pmatrix}
+					1&1&0&1\\0&1&1&1\\0&0&2&1
+				\end{pmatrix}
+			\end{align*}
+		\item Dabei ist $k=3$, $h_1=1$, $h_2=2$, $h_3=3$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\vspace{-6mm}
+	\hfill$B=\begin{pmatrix} 1&1&0&1\\0&1&1&1\\0&0&2&1 \end{pmatrix}$
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir d\ue rfen also den Wert von $u_4$ frei w\ae hlen.
+		\item Anschlie\ss end bestimmen wir den Wert von $u_3$:
+			\begin{align*}
+				u_3=-\frac{1}{2}\sum_{\ell>3}b_{3\,\ell}u_\ell=-\frac{1}{2}\cdot 1\cdot u_4=-u_4/2.
+			\end{align*}
+		\item Hernach bestimmen wir $u_2$:
+			\begin{align*}
+				u_2&=-\frac11\sum_{\ell>2}b_{2,\,\ell} u_\ell
+				=-1\cdot u_3-1\cdot u_4=-u_4/2.
+			\end{align*}
+		\item Zuletzt kommt $u_1$:
+			\begin{align*}
+				u_1&=-\frac{1}{1}\sum_{\ell>1}b_{1,\,\ell}u_\ell=-1\cdot u_2-0\cdot u_3-1\cdot u_4=-u_4/2.
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir erhalten also
+			\begin{align*}
+				\ker(A)&=\ker(B)=\cbc{\begin{pmatrix} -u_4/2\\-u_4/2\\-u_4/2\\u_4 \end{pmatrix}:u_4\in\RR}
+			\end{align*}
+		\item Ein konkretes Beispiel f\ue r einen Vektor im Kern ist
+			\begin{align*}
+				u&=\begin{pmatrix} -1\\-1\\-1\\2 \end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Inhomogene lineare Gleichungssysteme}
+		\begin{itemize}
+			\item Wie l\oe sen wir Gleichungssysteme der Form
+				\begin{align*}
+					Au&=y&&(A\in\RR^{m\times n},\,u\in\RR^n,\,y\in\RR^m)?
+				\end{align*}
+			\item Ausgeschrieben:
+				\begin{align*}
+					a_{11}u_1+\cdots+a_{1n}u_n&=y_1\\
+											  &\vdots\\
+					a_{m1}u_1+\cdots+a_{mn}u_n&=y_m
+				\end{align*}
+			\item Wie stellen wir fest, ob \ue berhaupt eine L\oe sung existiert?
+			\item Falls ja, wie finden wir eine oder alle L\oe sungen?
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Rechenschema}
+		\begin{itemize}
+			\item Wir f\ue gen den Vektor $y$ als Spalte hinzu:
+				\begin{align*}
+					A'&=(A\quad y)
+				\end{align*}
+			\item $A'$ hat Gr\oe\ss e $m\times(n+1)$.
+			\item Dann wenden wir das Gau\ss verfahren an, um die ersten $n$ Spalten von $A'$ in Zeilenstufenform zu bringen.
+			\item Sei
+				\begin{align*}
+					B'&=(B\quad z)&&(B\in\RR^{m\times n},\,z\in\RR^m)
+				\end{align*}
+				das Ergebnis.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Rechenschema}
+		\begin{itemize}
+			\item Seien $k$, $h_1,\ldots,h_\ell$ wie in der Definition der Zeilenstufenform.
+			\item Falls es ein $k<i\leq m$ mit $z_i\neq0$ gibt, hat das Gleichungssystem keine L\oe sung.
+			\item Sonst k\oe nnen wir alle L\oe sungen bestimmen, indem wir beliebige Werte f\ue r $u_i$ mit $i\in\{1,\ldots,n\}\setminus\{h_1,\ldots,h_k\}$ w\ae hlen und dann r\ue ckw\ae rts f\ue r $\ell=k,\ldots,1$ die Formel
+				\begin{align*}
+					u_{h_\ell}=\frac{z_\ell-\sum^n_{j=h_{\ell}+1}b_{\ell j}u_j}{b_{\ell\, h_\ell}}.
+				\end{align*}
+				anwenden.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Betrachte 
+			\begin{align*}
+				A&=\begin{pmatrix}
+					0&1&1&1\\1&1&0&1\\1&0&1&1
+					\end{pmatrix},&&&y&=\begin{pmatrix} 2\\4\\8 \end{pmatrix}
+			\end{align*}
+		\item Wir erweitern die Matrix um den Vektor $y$; es ist \ue blich, dabei eine Trennlinie einzuf\ue gen:
+			\begin{align*}
+				A'&=\bc{\begin{array}{cccc|c} 0&1&1&1&2\\1&1&0&1&4\\1&0&1&1&8\end{array}}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Wir bringen die Matrix $A'$ jetzt in Zeilenstufenform. 
+			\item Vertausche die erste und die zweite Zeile:
+				\begin{align*}
+					\bc{\begin{array}{cccc|c}1&1&0&1&4\\0&1&1&1&2\\1&0&1&1&8\end{array}}
+				\end{align*}
+			\item Subtrahiere die erste Zeile von der letzten Zeile:
+				\begin{align*}
+					\bc{\begin{array}{cccc|c}1&1&0&1&4\\0&1&1&1&2\\0&-1&1&0&4\end{array}}
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Addiere die zweite Zeile zur letzten Zeile:
+				\begin{align*}
+					\bc{\begin{array}{cccc|c}1&1&0&1&4\\0&1&1&1&2\\0&0&2&1&6\end{array}}
+				\end{align*}
+			\item Die Matrix ist nun in Zeilenstufenform mit
+				\begin{align*}
+					k&=3&h_1&=1&h_2&=2&h_3&=3
+				\end{align*}
+			\item Wir d\ue rfen also $u_4$ frei w\ae hlen.
+			\item F\ue r die \ue brigen Variablen erhalten wir
+				\begin{align*}
+					u_3&=\frac{6-u_4}{2}=3-\frac{u_4}{2}&
+					u_2&=2-u_3-u_4=2-\frac{u_4}2\\
+					u_1&=4-u_2-u_4=5-\frac{u_4}{2}
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Die L\oe sungsmenge des linearen Gleichungssystems lautet also
+				\begin{align*}
+					\cbc{u\in\RR^4:Au=y}&=\cbc{\begin{pmatrix}
+					5-u_4/2\\2-u_4/2\\3-u_4/2\\u_4
+			\end{pmatrix}:u_4\in\RR}
+				\end{align*}
+			\item Ein konkretes Beispiel f\ue r eine L\oe sung ist
+				\begin{align*}
+					u&=\begin{pmatrix} 5\\2\\3\\0 \end{pmatrix}
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Sei
+				\begin{align*}
+					A&=\begin{pmatrix} 1&1&1\\2&2&2\\3&3&4\end{pmatrix}&&&y&=\begin{pmatrix} 1\\-1\\0 \end{pmatrix}
+				\end{align*}
+			\item Die erweiterte Matrix lautet
+				\begin{align*}
+					A'&=\bc{\begin{array}{ccc|c} 1&1&1&1\\2&2&2&-1\\3&3&4&0\end{array}}
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Wir bringen die Matrix in Zeilenstufenform.
+			\item Subtrahiere die erste Zeil zweimal von der zweiten und dreimal von der dritten:
+				\begin{align*}
+				\bc{\begin{array}{ccc|c} 1&1&1&1\\0&0&0&-3\\0&0&1&-3\end{array}}
+				\end{align*}
+			\item Vertausche die zweite und die dritte Zeile:
+\begin{align*}
+	B'&=\bc{\begin{array}{ccc|c} 1&1&1&1\\0&0&1&-3\\0&0&0&-3\end{array}}
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\hfill$B'=\bc{\begin{array}{ccc|c} 1&1&1&1\\0&0&1&-3\\0&0&0&-3\end{array}}$
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Die Matrix ist jetzt in Zeilenstufenform mit
+				\begin{align*}
+					k&=2&h_1&=1&h_2&=3.
+				\end{align*}
+			\item Wir haben
+				\begin{align*}
+					B&=\begin{pmatrix}1&1&1\\0&0&1\\0&0&0\end{pmatrix}&
+					z&=\begin{pmatrix} 1\\-3\\-3 \end{pmatrix}
+				\end{align*}
+			\item Weil $z_3=-3\neq0$, hat das Gleichungssystem keine L\oe sung. 
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Satz}
+		Sei $A$ eine $m\times n$-Matrix und $y\in\RR^m$.
+		\begin{itemize}
+			\item Das lineare Gleichungssystem $Au=z$ hat entweder gar keine, eine einzige oder unendlich viele L\oe sungen.
+			\item Wenn $x\in\RR^n$ eine L\oe sung des Gleichungssystems ist, dann ist
+				\begin{align*}
+					x+\ker(A)=\cbc{x+v:v\in\ker(A)}
+				\end{align*}
+				die L\oe sungsmenge.
+		\end{itemize}
+	\end{block}
+	\emph{Wenn das lineare Gleichungssystem eine L\oe sung hat, ist die L\oe sungsmenge also immer eine Translation des Kerns.}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Zusammenfassung}
+	\begin{itemize}
+	\item Mit dem Gau\ss verfahren k\oe nnen Matrizen in Zeilenstufenform gebracht werden.
+	\item Wir k\oe nnen dann den Kern der Matrix ablesen.
+	\item Inhomogene lineare Gleichungssysteme k\oe nnen ebenfalls mit dem Gau\ss verfahren gel\oe st werden.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,13 @@
+*#
+*.swp
+*.fdb_latexmk
+*.fls
+*.aux
+*.log
+*.synctex*
+*.out
+*.toc
+*.snm
+*.nav
+slides/*.pdf
+**/*DS_Store

@@ -1,0 +1,775 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\renewcommand\AA{\mathbb A}
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\PP{\mathbb P}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\renewcommand\SS{\mathbb S}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+\newcommand{\trans}{\top}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\rrk}{\mathrm{zrg}}
+\newcommand{\crk}{\mathrm{srg}}
+\newcommand{\rk}{\mathrm{rg}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\SL}{\mathrm{SL}}
+\newcommand{\SO}{\mathrm{SO}}
+\newcommand{\nul}{\mathrm{nul}}
+\newcommand{\eig}{\mathrm{eig}}
+
+\newcommand{\mytitle}{Eigenwerte}
+
+\title[Linadi]{\mytitle}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{JWGUFFM}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Definition}
+		\begin{itemize}
+			\item Sei $A$ eine $n\times n$-Matrix.
+			\item Eine Zahl $\lambda\in\RR$ hei\ss t \emph{Eigenwert} von $A$, falls
+				\begin{align*}
+					\nul(A-\lambda\id_n)>0;
+				\end{align*}
+			d.h.\ es gibt einen Vektor $u\in\RR^n\setminus\cbc 0$, so da\ss\
+				\begin{align*}
+				Au=\lambda u.
+				\end{align*}
+			\item Ein solcher Vektor $u$ hei\ss t \emph{Eigenvektor} von $A$ zum Eigenwert $\lambda$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Proposition}
+		Sei $A$ eine $n\times n$-Matrix und sei $\lambda\in\RR$ ein Eigenwert von $A$.
+		Die Menge
+		\begin{align*}
+			\eig(A,\lambda)&=\cbc{u\in\RR^n:Au=\lambda u}
+		\end{align*}
+		ist ein Untervektorraum von $\RR^n$.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item Die Matrix
+				\begin{align*}
+					A&=\begin{pmatrix} 1&0\\0&2 \end{pmatrix}
+				\end{align*}
+				hat die Eigenwerte $1$ und $2$.
+			\item Entsprechende Eigenvektoren sind
+				\begin{align*}
+					\begin{pmatrix} 1\\0 \end{pmatrix}\quad\mbox{und}\quad
+				\begin{pmatrix} 0\\1 \end{pmatrix}
+				\end{align*}
+			\item Allgemein sind die Eigenwerte einer Diagonalmatrix
+				\begin{align*}
+					\diag(c_1,\ldots,c_n)
+				\end{align*}
+				immer genau die Zahlen $c_1,\ldots,c_n$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Definition}
+		Sei $A$ eine $n\times n$-Matrix.
+		Die Funktion
+		\begin{align*}
+			\chi_A:\RR\to\RR&&x\mapsto\det(A-x\cdot\id_n)
+		\end{align*}
+		hei\ss t das \emph{charakteristische Polynom} von $A$.
+	\end{block}
+\begin{block}{Proposition}
+		Sei $A$ eine $n\times n$-Matrix.
+		Eine Zahl $\lambda\in\RR$ ist ein Eigenwert von $A$ genau dann, wenn $\chi_A(\lambda)=0$.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Rechenschema f\ue r Eigenwerte und Eigenvektoren}
+	\begin{itemize}
+		\item Bestimme das charakteristische Polynom $\chi_A(x)$.
+		\item Finde die Nullstellen $\lambda_1,\ldots,\lambda_\ell$ von $\chi_A(x)$.
+		\item Bestimme die Eigenr\ae ume
+			\begin{align*}
+				\eig(A,\lambda_i)&=\ker(A-\lambda_i\cdot\id_n)&&\mbox{f\ue r }i=1,\ldots,\ell.
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+	\item Betrachte die Matrix
+		\begin{align*}
+			A&=\begin{pmatrix}1&2\\2&-1\end{pmatrix}
+		\end{align*}
+	\item Das charakteristische Polynom lautet
+		\begin{align*}
+			\chi_A(x)&=\det\bc{ \begin{pmatrix}1&2\\2&-1\end{pmatrix}-x\cdot\begin{pmatrix}1&0\\0&1\end{pmatrix} }
+									 =\det\begin{pmatrix} 1-x&2\\2&-1-x \end{pmatrix}\\
+															 &=(1-x)(-1-x)-4=x^2-5
+		\end{align*}
+	\item Die Nullstellen lauten also $\lambda_1=-\sqrt 5$ und $\lambda_2=\sqrt 5$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir bestimmen nun
+			\begin{align*}
+				\eig(A,\pm\sqrt 5)&=\ker\begin{pmatrix} 1\mp\sqrt 5&2\\2&-1\mp\sqrt 5 \end{pmatrix}
+			\end{align*}
+			mit dem Gau\ss schen Eliminationsverfahren.
+		\item Wir brigen dazu die Matrizen in Zeilenstufenform; wir beginnen mit
+			\begin{align*}
+				\begin{pmatrix} 1\mp\sqrt 5&2\\2&-1\mp\sqrt 5 \end{pmatrix}
+			\end{align*}
+		\item Zun\ae chst vertauschen wir die Zeilen:
+\begin{align*}
+				\begin{pmatrix} 2&-1\mp\sqrt 5\\1\mp\sqrt 5&2 \end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Nun subtrahieren wir das $(1\mp\sqrt 5)/2$-Fache der ersten Zeile von der zweiten Zeile:
+\begin{align*}
+				\begin{pmatrix} 2&-1\mp\sqrt 5\\0&0 \end{pmatrix}
+			\end{align*}
+		\item Die Matrix ist nun in Zeilenstufenform.
+		\item Wir lesen der Kern ab:
+			\begin{align*}
+				\ker\begin{pmatrix} 2&-1\mp\sqrt 5\\0&0 \end{pmatrix}&=
+				\cbc{\begin{pmatrix}
+						(1\pm\sqrt 5)u_2/2\\u_2
+				\end{pmatrix}:u_2\in\RR}.
+			\end{align*}
+		\item Konkrete Eigenvektoren zu den Eigenwerten $\pm\sqrt 5$ sind also
+			\begin{align*}
+				\begin{pmatrix} 1+\sqrt 5\\2 \end{pmatrix}&&
+			\begin{pmatrix} 1-\sqrt 5\\2 \end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Zur Probe multiplizieren wir diese beiden Vektoren mit $A$:
+			\begin{align*}
+				\begin{pmatrix}1&2\\2&-1\end{pmatrix}\begin{pmatrix} 1+\sqrt 5\\2 \end{pmatrix}&= \begin{pmatrix} 5+\sqrt 5\\2\sqrt 5 \end{pmatrix}=\sqrt 5\begin{pmatrix} 1+\sqrt 5\\2 \end{pmatrix}\\
+				\begin{pmatrix}1&2\\2&-1\end{pmatrix}\begin{pmatrix} 1-\sqrt 5\\2 \end{pmatrix}&= \begin{pmatrix} 5-\sqrt 5\\-2\sqrt 5 \end{pmatrix}=-\sqrt 5\begin{pmatrix} 1-\sqrt 5\\2 \end{pmatrix}
+			\end{align*}
+		\item Wir haben also die Eigenwerte und Eigenvektoren der Matrix $A$ bestimmt.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Definition}
+		Eine $n\times n$-Matrix $A$ hei\ss t \emph{symmetrisch}, wenn
+		\begin{align*}
+		A^\trans=A.
+		\end{align*}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Satz}
+		Angenommen $A$ ist eine symmetrische $n\times n$-Matrix.
+		Dann gibt es eine orthogonale $n\times n$-Matrix $U$ und reelle Zahlen
+			\begin{align*}
+			\lambda_1\leq\lambda_2\leq\cdots\leq\lambda_n
+			\end{align*}
+		so da\ss\
+			\begin{align*}
+				A&=U\cdot \diag(\lambda_1,\ldots,\lambda_n)\cdot U^{-1}.
+			\end{align*}
+		Die Zahlen $\lambda_1,\ldots,\lambda_n$ sind genau die Eigenwerte von $A$.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Anmerkung}
+	\begin{itemize}
+	\item Man spricht von \emph{Diagonalisierung} der Matrix $A$.
+	\item Die Spalten der Matrix $U$ bilden eine Orthonormalbasis des $\RR^n$, die aus Eigenvektoren der Matrix $A$ besteht.
+	\item Wichtig ist die Annahme, da\ss\ $A$ symmetrisch ist, d.h.\
+		\begin{align*}
+		A^\trans=A.
+		\end{align*}
+	\item Matrizen, die nicht symmetrisch sind, besitzen nicht notwendigerweise eine Orthonormalbasis aus Eigenvektoren.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Rechenschema zum Diagonalisieren}
+	\begin{itemize}
+		\item Sei $A$ eine symmetrische $n\times n$-Matrix.
+		\item Wir bestimmen das charakteristische Polynom $\chi_A(x)$ und seine Nullstellen.
+		\item F\ue r jede Nullstelle $\lambda$ von $\chi_A(x)$ berechnen wir $\eig(A,\lambda)$.
+		\item Wir verwenden das Gram-Schmidt-Verfahren, um f\ue r jedes $\lambda$ eine Orthonormalbasis von $\eig(A,\lambda)$ zu berechnen.
+		\item Diese Basisvektoren, nach Eigenwerten aufsteigend geordnet, liefern die Spalten der Matrix $U$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Betrachte die symmetrische Matrix
+			\begin{align*}
+				A&=\begin{pmatrix}
+					1&-1&-1&-1\\-1&1&-1&-1\\-1&-1&1&-1\\-1&-1&-1&1
+				\end{pmatrix}
+			\end{align*}
+		\item Wir berechnen zun\ae chst
+			\begin{align*}
+				\chi_A(x)&=\det(A-x\cdot\id_4)=\det\begin{pmatrix}
+					1-x&-1&-1&-1\\-1&1-x&-1&-1\\-1&-1&1-x&-1\\-1&-1&-1&1-x
+				\end{pmatrix}
+			\end{align*}
+		\item Wir bringen die Matrix in Zeilenstufen, wobei wir mit $x$ als einer \alert{Unbestimmten} rechnen.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Addiere die letzte Zeile zur ersten und subtrahiere sie von der zweiten und dritten Zeile:
+			\begin{align*}
+				\chi_A(x)&=\det\begin{pmatrix}
+					-x&-2&-2&-x\\0&2-x&0&x-2\\0&0&2-x&x-2\\-1&-1&-1&1-x
+				\end{pmatrix}
+			\end{align*}
+		\item Nun skalieren wir die Matrix mit $-1$:
+\begin{align*}
+				\chi_A(x)&=\det\begin{pmatrix}
+					x&2&2&x\\0&x-2&0&2-x\\0&0&x-2&2-x\\1&1&1&x-1
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Subtrahiere nun $x$-fache der letzten Zeile von der ersten Zeile:
+\begin{align*}
+				\chi_A(x)&=\det\begin{pmatrix}
+					0&2-x&2-x&2x-x^2\\0&x-2&0&2-x\\0&0&x-2&2-x\\1&1&1&x-1
+				\end{pmatrix}
+			\end{align*}
+		\item Addiere die zweite und die dritte Zeile zur ersten Zeile:
+\begin{align*}
+				\chi_A(x)&=\det\begin{pmatrix}
+					0&0&0&4-x^2\\0&x-2&0&2-x\\0&0&x-2&2-x\\1&1&1&x-1
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Vertausche die erste und die letzte Zeile:
+\begin{align*}
+				\chi_A(x)&=-\det\begin{pmatrix}
+					1&1&1&x-1 \\0&x-2&0&2-x\\0&0&x-2&2-x\\0&0&0&4-x^2				\end{pmatrix}
+			\end{align*}
+		\item Die Matrix ist jetzt in Zeilenstufenform und wir berechnen
+			\begin{align*}
+				\chi_A(x)=(x-2)^2(x^2-4)=(x-2)^3(x+2).
+			\end{align*}
+		\item Die Nullstellen von $\chi_A(x)$ sind also $\pm2$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir bestimmen nun die Eigenr\ae ume $\ker(A+2\id)$, $\ker(A-2\id)$.
+		\item Dazu verwenden wir das Gau\ss verfahren:
+			\begin{align*}
+				A+2\cdot\id&= \begin{pmatrix} 3&-1&-1&-1\\-1&3&-1&-1\\-1&-1&3&-1\\-1&-1&-1&3
+				\end{pmatrix}
+			\end{align*}
+		\item Addiere die letzte Zeile dreimal zur ersten und subtrahiere sie von den anderen beiden:
+\begin{align*}
+				 \begin{pmatrix} 0&-4&-4&8\\0&4&0&-4\\0&0&4&-4\\-1&-1&-1&3
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Addiere die zweite und die dritte Zeile zur ersten Zeile:
+\begin{align*}
+				 \begin{pmatrix} 0&0&0&0\\0&4&0&-4\\0&0&4&-4\\-1&-1&-1&3
+				\end{pmatrix}
+			\end{align*}
+		\item Jetzt vertausche die erste und die letzte Zeile:
+\begin{align*}
+				 \begin{pmatrix}-1&-1&-1&3 \\0&4&0&-4\\0&0&4&-4\\0&0&0&0				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Der Kern der Matrix ist also
+			\begin{align*}
+				\eig(A,-2)&=\ker(A+2\id)=\cbc{\begin{pmatrix} u_4\\u_4\\u_4\\u_4 \end{pmatrix}:u_4\in\RR}.
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Weil der Kern von einem einzigen Vektor aufgespannt wird, ist seine Dimension 1.
+		\item Daher bildet der einzelne Vektor
+			\begin{align*}
+			\begin{pmatrix}
+			1/2\\1/2\\1/2\\1/2
+			\end{pmatrix}
+			\end{align*}
+			eine Orthonormalbasis von $\eig(A,-2)$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Zur Berechnung von $\ker(A-2\id)$ verwenden wir ebenfalls das Gau\ss verfahren:
+			\begin{align*}
+				A-2\cdot\id&= \begin{pmatrix} -1&-1&-1&-1\\-1&-1&-1&-1\\-1&-1&-1&-1\\-1&-1&-1&-1
+				\end{pmatrix}
+			\end{align*}
+		\item Subtrahiere die erste Zeile von den anderen drei Zeilen:
+\begin{align*}
+	\begin{pmatrix}-1&-1&-1&-1\\0&0&0&0\\0&0&0&0\\0&0&0&0\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Der Kern der Matrix lautet also
+\begin{align*}
+	\ker(A-2\cdot\id)&=\cbc{\begin{pmatrix}-u_2-u_3-u_4\\u_2\\u_3\\u_4\end{pmatrix}:u_2,u_3,u_4\in\RR}.
+			\end{align*}
+		\item Die Dimension des Kerns ist 3.
+		\item Wir erhalten drei linear unabh\ae ngige Vektoren im Kern, indem wir f\ue r $u_2,u_3,u_4$ einsetzen
+			\begin{align*}
+				\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}&=\begin{pmatrix}1\\0\\0\end{pmatrix}&
+				\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}&=\begin{pmatrix}0\\1\\0\end{pmatrix}&
+				\begin{pmatrix} u_2\\u_3\\u_4 \end{pmatrix}&=\begin{pmatrix}0\\0\\1\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Dies ergibt die Vektoren
+			\begin{align*}
+				\begin{pmatrix} -1\\1\\0\\0 \end{pmatrix},
+				\begin{pmatrix} -1\\0\\1\\0 \end{pmatrix},
+				\begin{pmatrix} -1\\0\\0\\1 \end{pmatrix}\in\ker(A-2\id).
+			\end{align*}
+		\item Wir wenden nun das Gram-Schmidt-Verfahren an.
+		\item Zun\ae chst normieren wir den ersten Vektor:
+			\begin{align*}
+				\begin{pmatrix} -1/\sqrt 2\\1/\sqrt 2\\0\\0 \end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Als n\ae chstes berechnen wir
+			\begin{align*}
+				\begin{pmatrix} -1\\0\\1\\0 \end{pmatrix}-\begin{pmatrix} -1&0&1&0 \end{pmatrix}\cdot \begin{pmatrix} -1/\sqrt 2\\1/\sqrt 2\\0\\0 \end{pmatrix}\cdot \begin{pmatrix} -1/\sqrt 2\\1/\sqrt 2\\0\\0 \end{pmatrix}&=\begin{pmatrix} -1/2\\-1/2\\1\\0
+				\end{pmatrix}
+			\end{align*}
+		\item Diesen Vektor normieren wir:
+			\begin{align*}
+				\norm{\begin{pmatrix} -1/2\\-1/2\\1\\0\end{pmatrix}}^{-1} \begin{pmatrix} -1/2\\-1/2\\1\\0\end{pmatrix}=\begin{pmatrix}-1/\sqrt 6\\-1/\sqrt 6\\\sqrt{2/3}\\0\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir kommen zum dritten Vektor:	
+			\begin{align*}
+			\begin{pmatrix} -1\\0\\0\\1 \end{pmatrix}
+			&-\begin{pmatrix} -1&0&0&1 \end{pmatrix}\begin{pmatrix} -1/\sqrt 2\\1/\sqrt 2\\0\\0 \end{pmatrix}\begin{pmatrix} -1/\sqrt 2\\1/\sqrt 2\\0\\0 \end{pmatrix}\\
+			&-\begin{pmatrix} -1&0&0&1 \end{pmatrix}\begin{pmatrix}-1/\sqrt 6\\-1/\sqrt 6\\\sqrt{2/3}\\0\end{pmatrix}\begin{pmatrix}-1/\sqrt 6\\-1/\sqrt 6\\\sqrt{2/3}\\0\end{pmatrix}\\
+			&=\begin{pmatrix}-1/2\\-1/2\\0\\1 \end{pmatrix}+\begin{pmatrix}1/6\\1/6\\-1/3\\0\end{pmatrix}
+			=\begin{pmatrix}-1/3\\-1/3\\-1/3\\1 \end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Diesen Vektor normieren wir noch:
+			\begin{align*}
+				\norm{\begin{pmatrix}-1/3\\-1/3\\-1/3\\1 \end{pmatrix}}^{-1}\begin{pmatrix}-1/3\\-1/3\\-1/3\\1 \end{pmatrix}&=\begin{pmatrix}
+				-1/(2\sqrt 3)\\-1/(2\sqrt 3)\\-1/(2\sqrt 3)\\\sqrt 3/2
+				\end{pmatrix}
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir erhalten die Orthonormalbasis
+			\begin{align*}
+				\begin{pmatrix} -\sqrt 2/2\\\sqrt 2/2\\0\\0 \end{pmatrix},\quad
+\begin{pmatrix}-1/\sqrt 6\\-1/\sqrt 6\\\sqrt{2/3}\\0\end{pmatrix},\quad
+\begin{pmatrix} -1/(2\sqrt 3)\\-1/(2\sqrt 3)\\-1/(2\sqrt 3)\\\sqrt 3/2 \end{pmatrix}
+			\end{align*}
+			des Eigenraums $\eig(A,2)$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Um die Matrix $U$ zu erhalten, f\ue gen wir schlu\ss endlich die Orthonormalbasen der Eigenr\ae ume zusammen:
+			\begin{align*}
+				U&=\begin{pmatrix}
+					1/2&-1/\sqrt 2&-1/\sqrt 6&-1/(2\sqrt 3)\\
+					1/2&1/\sqrt 2&-1/\sqrt 6&-1/(2\sqrt 3)\\
+					1/2&0&\sqrt{2/3}&-1/(2\sqrt 3)\\
+					1/2&0&0&\sqrt 3/2
+				\end{pmatrix}
+			\end{align*}
+		\item Die Matrix $U$ ist orthogonal, d.h.\ $U^\trans=U^{-1}$.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Beispiel}
+	\begin{itemize}
+		\item Wir haben somit die Matrix $A$ diagonalisiert:
+			\begin{align*}
+				A&=U\begin{pmatrix}
+					-2&0&0&0\\0&2&0&0\\0&0&2&0\\0&0&0&2
+				\end{pmatrix}
+				U^\trans.
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Rechenregeln}
+		Angenommen $A$ ist eine symmetrische $n\times n$-Matrix mit Diagonalisierung $A=U\cdot\diag(\lambda_1,\ldots,\lambda_n)U^\trans$.
+	\begin{itemize}
+		\item Es gilt $\det(A)=\prod_{i=1}^n\lambda_i$.
+		\item F\ue r jede Zahl $\ell\in\NN$ gilt $ A^\ell=U\diag(\lambda_1^\ell,\ldots,\lambda_n^\ell)U^\trans.  $
+		\item Falls $\det(A)\neq0$, gilt f\ue r jede Zahl $\ell\in\NN$
+			\begin{align*}
+				A^{-\ell}&=U\diag(\lambda_1^{-\ell},\ldots,\lambda_n^{-\ell})U^\trans.
+			\end{align*}
+		\item F\ue r jede Zahl $c\in\RR$ gilt
+			\begin{align*}
+				A+c\id_n&=U\diag(c+\lambda_1,\ldots,c+\lambda_n)U^\trans.
+			\end{align*}
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{\mytitle}
+	\begin{block}{Zusammenfassung}
+	\begin{itemize}
+		\item Durch Diagonalisierung kann man eine Orthonormalbasis finden, unter der eine symmetrische Matrix $A$ eine besonders einfache Beschreibung zul\ae sst.
+		\item Das Diagonalisierungsverfahren beruht darauf, die Nullstellen des charakteristischen Polynoms zu finden.
+	\end{itemize}	
+	\end{block}
+\end{frame}
+\end{document}
+

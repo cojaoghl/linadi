@@ -1,0 +1,445 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\PP{\mathbb P}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\title[Linadi]{Primzahlen}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{JWGUFFM}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{Unzerlegbare Zahlen}
+	\begin{block}{Definition}
+		Eine Zahl $z\in\ZZ\setminus\{1,-1\}$ hei\ss t \emph{unzerlegbar}, falls $y\nmid z$ f\ue r alle $1<y<|z|$.
+	\end{block}
+
+	\bigskip
+	{\itshape Die Zahl $z$ ist also genau dann unzerlegbar, wenn $\pm1$ und $\pm z$ ihre einzigen Teiler sind.}
+\end{frame}
+
+\begin{frame}\frametitle{Unzerlegbare Zahlen}
+	\begin{block}{Beispiele}
+		\begin{itemize}
+			\item Die Zahl $13$ ist unzerlegbar, wie man durch Ausprobieren aller m\oe glichen Teiler feststellt.
+			\item Die Zahl $0$ ist zerlegbar, weil sie von jeder anderen Zahl geteilt wird.
+			\item Die Zahl $-2$ ist unzerlegbar.
+			\item Die Zahl $4$ ist zerlegbar, weil sie von $2$ geteilt wird.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Unzerlegbare Zahlen}
+	\begin{block}{Lemma}
+		Jede Zahl $z\in\ZZ\setminus\{0,1,-1\}$ hat einen unzerlegbarer Teiler.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Es gen\ue gt, dies f\ue r $z>1$ zu beweisen.
+			\item Wir f\ue hren Induktion.
+			\item Induktionsanfang: die Zahl $2$ ist selbst unzerlegbar.
+			\item Ist allgemein $z$ unzerlegbar, so ist $z$ selbst der gesuchte Teiler.
+			\item Sonst hat $z$ einen Teiler $1<y<z$.
+			\item Nach Induktion hat $y$ einen unzerlegbaren Teiler $x$.
+			\item Dieser teilt auch $z$.
+		\end{itemize}	
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Unzerlegbare Zahlen}
+	\begin{block}{Satz}
+		Es gibt unendlich viele unzerlegbare Zahlen.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Angenommen nicht: seien $u_1,\ldots,u_\ell$ alle positiven unzerlegbaren Zahlen.
+			\item Die Zahl
+				\begin{align*}
+					z=1+\prod_{i=1}^\ell u_i
+				\end{align*}
+				wird von keiner der Zahlen $u_1,\ldots,u_\ell$ geteilt.
+			\item Aber nach dem Lemma hat $z$ einen unzerlegbaren Teiler $y>1$.
+			\item Widerspruch.
+		\end{itemize}	
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Primzahlen}
+	\begin{block}{Definition}
+		Eine Zahl $p\in\ZZ\setminus\{-1,0,1\}$ hei\ss t \emph{Primzahl}, falls f\ue r alle $x,y\in\ZZ$ gilt:
+		\begin{align*}
+			\mbox{Wenn $p\mid x\cdot y$, dann gilt $p\mid x$ oder $p\mid y$.}
+		\end{align*}
+		Mit $\PP$ wird die Menge aller Primzahlen bezeichnet.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Primzahlen}
+	\begin{block}{Beispiel}
+		\begin{itemize}
+			\item $2$ ist eine Primzahl; denn ist $x\cdot y$ gerade, so auch $x$ oder $y$.
+			\item $\pm1$ sind per Definition keine Primzahlen.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Primzahlen}
+	\begin{block}{Lemma}
+		Jede Primzahl ist unzerlegbar.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Sei $p>1$ prim.
+			\item Angenommen $x>1$ teilt $p$.
+			\item Dann existiert $y>0$, so da\ss\ $p=x\cdot y$.
+			\item Weil $p$ eine Primzahl ist, folgt $p|x$ oder $p|y$.
+			\item Also gilt $p=x$ oder $p=y$.
+			\item Weil $x>1$, folgt $p=x$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Primzahlen}
+	\begin{block}{Lemma}
+		Jede unzerlegbare Zahl ist eine Primzahl.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item Angenommen nicht; sei $p>1$ das kleinste Gegenbeispiel.
+			\item W\ae hle $a,b>1$ mit $p|ab$, $p\nmid a$, $p\nmid b$ und $a+b$ minimal.
+			\item Dann gilt $a<p$; denn sonst w\ae re $a-p,b$ ein kleineres Gegenbeispiel.
+			\item Analog gilt $b<p$.
+			\item Die Zahl $a$ hat einen unzerlegbaren Teiler $1<q\leq a<p$.
+			\item Diese Zahl $q$ ist prim, weil $p$ minimal war.
+			\item Folglich gibt es $c>0$, so da\ss\ $q|a|ab=cp$.
+			\item Weil $q$ prim ist, folgt $q|c$ oder $q|p$.
+			\item Weil $p$ unzerlegbar ist, folgt $q|c$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Primzahlen}
+	\begin{block}{Lemma}
+		Jede unzerlegbare Zahl ist eine Primzahl.
+	\end{block}
+	\begin{block}{Beweis (Fortsetzung)}
+		\begin{itemize}
+			\item Ferner gilt $q<a$; denn sonst h\ae tten wir $q=a$ und aus $q|c$ und $cp=ab$ folgte
+\begin{align*}
+	b=\frac{c}{a}\cdot p=\frac{c}{q}\cdot p\quad\mbox{also}\quad q|b.
+\end{align*}
+			\item Weil $q<a$ und $q|c$, folgt $p|cp/q=ab/q$ und $a/q+b<a+b$.
+			\item Somit ist $a/q,b$ ein kleineres Gegenbeispiel.
+			\item Widerspruch.
+		\end{itemize}
+	\end{block}
+
+	\bigskip{\itshape Primzahlen und unzerlegbare Zahlen sind also dasselbe!}
+\end{frame}
+
+\begin{frame}\frametitle{Die Primfaktorisierung}
+	\begin{block}{Satz}
+		Zu jeder Primzahl $1<p\in\PP$ gibt es eine Abbildung $w_p:\NN\to\NN_0$, so da\ss\ f\ue r jede Zahl $z\in\NN$ gilt
+		\begin{align*}
+			z=\prod_{p\in\PP}p^{w_p(z)}.
+		\end{align*}
+		Die Abbildungen $w_p$ sind eindeutig bestimmt.
+	\end{block}
+	\begin{block}{Beweis (Existenz)}
+		\begin{itemize}
+			\item Wir f\ue hren Induktion: f\ue r $z=1$ setze $w_p(z)=0$ f\ue r alle $p$.
+			\item Jedes $z>1$ hat einen Primteiler $q>1$.
+			\item F\ue r $y=z/q$ wissen wir nach Induktion, da\ss\ $ y=\prod_{p\in\PP}p^{w_p(y)}.  $
+			\item Definiere $w_p(z)=w_p(y)$ f\ue r alle $p\neq q$ und $w_q(z)=w_q(y)+1$.
+			\item Dann gilt $z=\prod_{p\in\PP}p^{w_p(z)}.$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Die Primfaktorisierung}
+	\begin{block}{Beweis (Eindeutigkeit)}
+		\begin{itemize}
+			\item Angenommen $z>1$ hat zwei verschiedene Zerlegungen
+				\begin{align*}
+					z=\prod_{p\in\PP}p^{w_p(z)}=\prod_{p\in\PP}p^{v_p(z)}.
+				\end{align*}
+			\item W\ae hle ein minimales Gegenbeispiel $z$ und betrachte
+				\begin{align*}
+					P&=\cbc{p\in\PP:w_p(z)>0},&Q&=\cbc{p\in\PP:v_p(z)>0}.
+				\end{align*}
+			\item Dann gilt $P\cap Q=\emptyset$ und $P\neq\emptyset$, $Q\neq\emptyset$.
+			\item F\ue r jedes $p\in P$ gilt $p\mid\prod_{p\in\PP}p^{v_p(z)}$.
+			\item Weil $p$ prim ist, gibt es folglich $q\in Q$ mit $p|q$.
+			\item Aber dann gilt $q=p$, weil $q$ unzerlegbar ist.
+			\item Also gilt $p=q$ und somit $P\cap Q\neq\emptyset$.
+			\item Widerspruch.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Die Primfaktorisierung}
+	\begin{block}{Satz}
+		Zu jeder Primzahl $1<p\in\PP$ gibt es eine Abbildung $w_p:\NN\to\NN_0$, so da\ss\ f\ue r jede Zahl $z\in\NN$ gilt
+		\begin{align*}
+			z=\prod_{p\in\PP}p^{w_p(z)}.
+		\end{align*}
+		Die Abbildungen $w_p$ sind eindeutig bestimmt.
+	\end{block}
+	\begin{block}{}
+		\begin{itemize}
+			\item Jede nat\ue rliche Zahl hat eine eindeutige Primfaktorisierung.
+			\item F\ue r $z<0$ definieren wir $w_p(z)=w_p(-z)$.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Zusammenfassung}
+	\begin{itemize}
+		\item Unzerlegbare Zahlen und Primzahl stimmen \ue berein.
+		\item Jede nat\ue rliche Zahl kann eindeutig in Primfaktoren zerlegt werden.
+		\item \emph{Frage:} gibt es einen effizienten Algorithmus, der herausfindet, ob eine gegebene Zahl prim ist?
+	\end{itemize}
+\end{frame}
+
+\end{document}

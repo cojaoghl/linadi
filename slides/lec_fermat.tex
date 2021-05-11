@@ -1,0 +1,479 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\renewcommand\AA{\mathbb A}
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\PP{\mathbb P}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\renewcommand\SS{\mathbb S}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\title[Linadi]{Der Fermat-Test}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{JWGUFFM}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Primzahltests}
+		\begin{itemize}
+			\item \emph{Gegeben:} eine Zahl $n\in\NN$.
+			\item \emph{Frage:} ist $n$ eine Primzahl?
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Die Brechstange}
+		\begin{itemize}
+			\item F\ue r jede ganze Zahl $2\leq z\leq\sqrt n$
+			\item $\qquad$dividiere $n$ mit Rest durch $z$:
+				\begin{align*}
+					n=q\cdot z+r&&0\leq r<z.
+				\end{align*}
+			\item $\qquad$Falls $r=0$, gib ``Nein'' aus und halte.
+			\item Gib ``Ja'' aus.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Laufzeit}
+		\begin{itemize}
+			\item Es werden bis zu $\sqrt n$ Divisionen ausgef\ue hrt.
+			\item In der Kryptographie liegt $n$ in der Gr\oe\ss enordnung $10^{1000}$.
+			\item Also werden etwa $10^{500}$ Divisionen gebraucht.
+			\item Bei $10^{10}$ Divisionen pro Sekunde dauert das
+				\begin{align*}
+					10^{482}&&\mbox{Jahre.}
+				\end{align*}
+			\item \itshape Leider gl\ue ht die Sonne schon in ca.~$10^{10}$ Jahren aus\dots
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Exponentielle Laufzeit}
+		\begin{itemize}
+			\item Zur Darstellung der Zahl $n$ brauchen wir etwa
+				\begin{align*}
+					\ell=\log_{10}n
+				\end{align*}
+				Ziffern.
+			\item Wenn $n$ Gr\oe\ss enordnung $10^{1000}$ hat, ist die Darstellungsl\ae nge also etwa $\ell\approx1000$.
+			\item Die Laufzeit des Brechstange-Algorithmus ist \alert{exponentiell} in der Darstellungsl\ae nge:
+				\begin{align*}
+					\sqrt n=\sqrt{10}\,^{\ell}.
+				\end{align*}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Polynomielle Laufzeit}
+		\begin{itemize}
+			\item F\ue r ein \emph{effizientes} Verfahren fordern wir eine polynomielle Laufzeit, also z.B.
+				\begin{align*}
+					\ell,\quad\ell^2,\quad\ell^3&&\mbox{elementare Rechenschritte.}
+				\end{align*}
+			\item Mehr dazu lernen Sie in der \alert{Komplexit\ae tstheorie}.
+			\item Der Fermat-Test ist ein erster Schritt auf dem Weg zu einem effizienten Primzahltest.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Lemma}
+		Sei $n\geq2$.
+		Wenn f\ue r $1\leq a<n$ ein $r\in\NN$ mit 
+		\begin{align*}
+			a^r\equiv1\mod n
+		\end{align*}
+		existiert, dann gilt $a+n\ZZ\in\ZZ_n^\times$.
+	\end{block}
+	\begin{block}{Beweis}
+		Es gilt
+		\begin{align*}
+			(a+n\ZZ)\cdot(a+n\ZZ)^{r-1}=a^r+n\ZZ=1+n\ZZ.
+		\end{align*}
+		Also ist $(a+n\ZZ)^{r-1}$ das Inverse zu $a+n\ZZ$.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Lemma}
+		Sei $n\geq2$.
+		Wenn 
+		\begin{align*}
+			a^{n-1}\equiv 1\mod n&&\mbox{f\ue r alle }1\leq a<n,
+		\end{align*}
+		dann ist $n$ eine Primzahl.
+	\end{block}
+	\begin{block}{Beweis}
+		\begin{itemize}
+			\item In diesem Fall gilt $|\ZZ_n^\times|=n-1$.
+			\item Also $\ZZ_n^\times=\ZZ_n\setminus\cbc0$.
+			\item Folglich ist $\ZZ_n$ ein K\oe rper.
+			\item Also ist $n$ eine Primzahl.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Definition}
+		Eine Zahl $1\leq a<n$ hei\ss t \emph{F-Zeuge} von $n\geq2$, falls
+		\begin{align*}
+			a^{n-1}\not\equiv1\mod n.
+		\end{align*}
+	\end{block}
+	\begin{block}{Korollar}
+		Eine Zahl $n\geq2$ hat genau dann einen F-Zeugen, wenn $n$ zusammengestzt ist.
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Algorithmus {\tt Fermat}$(n)$}
+		\begin{enumerate}
+			\item W\ae hle eine Zahl $a\in\{2,3,\ldots,n-2\}$ zuf\ae llig.
+			\item Falls
+				\begin{align*}
+					a^{n-1}\equiv1\mod n
+			\end{align*}
+			gib ``Primzahl'' aus.
+		\item Sonst gib ``Keine Primzahl'' aus.
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Anmerkungen}
+		\begin{itemize}
+			\item Der Fermat-Test ist ein \emph{Monte-Carlo-Algorithmus}.
+			\item D.h.\ er verwendet Randomisierung.
+			\item Der Algorithmus kann ``eine M\ue nze werfen'' und ob die Antwort richtig ist, h\ae ngt vom Ergebnis der M\ue nzw\ue rfe ab.
+			\item Also stehen wir vor der Aufgabe, die Erfolgswahrscheinlichkeit des Algorithmus zu analysieren.
+			\item \itshape Leider werden wir feststellen, da\ss\ der Fermattest dabei schlecht abschneidet\dots
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Anmerkungen}
+		\begin{itemize}
+			\item Der Algorithmus ist \emph{effizient}.
+			\item Schritt~1 f\ue hrt etwa $\log_2n$ M\ue nzw\ue rfe durch.
+			\item In Schritt~2 verwenden wir das Verfahren zum schnellen modularen Potenzieren.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Proposition}
+		Wenn der Fermattest ``Keine Primzahl'' ausgibt, ist $n$ zusammengesetzt.
+	\end{block}
+	\begin{block}{Anmerkung}
+	\begin{itemize}
+	\item Wenn der Fermattest ``Primzahl'' ausgibt, \alert{k\oe nnte} $n$ trotzdem zusammengesetzt sein.	
+	\item Wir m\ue ssen also die Fehlerwahrscheinlichkeit absch\ae tzen.
+	\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Satz}
+		Wenn $n>3$ zusammengesetzt ist und einen F-Zeugen $a$ mit $\ggt(a,n)=1$ besitzt, dann gibt der Fermattest mit Wahrscheinlichkeit mindestens $\frac{1}{2}$ ``keine Primzahl'' aus.
+	\end{block}
+	\begin{overprint}
+		\onslide<1>
+		\begin{block}{Beweis}
+			\begin{itemize}
+				\item Sei $ L=\cbc{a+n\ZZ:1\leq a<n\mbox{ ist kein F-Zeuge und }\ggt(a,n)=1}.  $
+				\item Dann ist $L$ eine Untergruppe von $\ZZ_n^\times$.
+				\item Au\ss erdem gilt $L\neq\ZZ_n^\times$.
+				\item Aus dem Satz von Lagrange folgt also $|L|\leq|\ZZ_n^\times|/2$.
+				\item Die Wahrscheinlichkeit, da\ss\ Schritt~1 ein $a$ mit
+					\begin{align*}
+						\ggt(a,n)>1&&\mbox{oder}&&a+n\ZZ\in L
+					\end{align*}
+					trifft, ist also mindestens $1/2$.
+			\end{itemize}
+		\end{block}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}\frametitle{Der Fermat-Test}
+	\begin{block}{Die Erfolgswahrscheinlichkeit}
+			\begin{itemize}
+				\item Angenommen $n$ ist zusammengesetzt und hat einen F-Zeugen $a$ mit $\ggt(a,n)=1$.
+				\item Der Fermattest gibt mit Wahrscheinlichkeit $\geq\frac{1}{2}$ ``keine Primzahl'' aus.
+				\item Wenn wir den Fermattest 100 mal mit unabh\ae ngigen M\ue nzw\ue rfen wiederholen, ist die Wahrscheinlichkeit, jedesmal f\ae lschlich die Antwort ``Primzahl'' zu erhalten, also
+					\begin{align*}
+						\leq 2^{-100}\approx 10^{-30}.
+					\end{align*}
+				\item Wenn hingegen $n$ prim ist, gibt der Fermattest \alert{immer} Primzahl aus (``einseitiger Fehler'').
+			\end{itemize}
+		\end{block}
+\end{frame}
+
+\begin{frame}{Der Fermat-Test}
+	\begin{block}{Carmichaelzahlen}
+		\begin{itemize}
+			\item Jede zusammengestzte Zahl hat einen F-Zeugen.
+			\item Aber nicht jede zusammengesetzte Zahl $n$ hat einen F-Zeugen $a$ mit $\ggt(a,n)=1$.
+			\item Solche Zahlen nennt man Carmichaelzahlen.
+			\item Sie werden vom Fermattest m\oe glicherweise mit sehr hoher Wahrscheinlichkeit f\ae lschlich f\ue r Primzahlen gehalten.
+			\item Der Fermattest ist also \emph{kein zuverl\ae ssiger Primzahltest!}
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}{Zusammenfassung}
+		\begin{itemize}
+			\item Der naive Primzahltest ``Teiler durchprobieren'' ist hoffnungslos ineffizient.
+			\item Der Fermattest kann feststellen, da\ss\ eine Zahl zusammengesetzt ist, ohne einen Teiler der Zahl zu bestimmen.
+			\item Der Fermattest ist ein Monte-Carlo-Algorithmus.
+			\item Leider bei\ss t er sich aber an Carmichaelzahlen die Z\ae hne aus.
+		\end{itemize}
+\end{frame}
+
+
+\end{document}

@@ -1,0 +1,475 @@
+\documentclass{beamer}
+\usepackage{amsmath,graphics}
+\usepackage{amssymb}
+
+\usetheme{default}
+\usepackage{xcolor}
+
+\definecolor{solarizedBase03}{HTML}{002B36}
+\definecolor{solarizedBase02}{HTML}{073642}
+\definecolor{solarizedBase01}{HTML}{586e75}
+\definecolor{solarizedBase00}{HTML}{657b83}
+\definecolor{solarizedBase0}{HTML}{839496}
+\definecolor{solarizedBase1}{HTML}{93a1a1}
+\definecolor{solarizedBase2}{HTML}{EEE8D5}
+\definecolor{solarizedBase3}{HTML}{FDF6E3}
+\definecolor{solarizedYellow}{HTML}{B58900}
+\definecolor{solarizedOrange}{HTML}{CB4B16}
+\definecolor{solarizedRed}{HTML}{DC322F}
+\definecolor{solarizedMagenta}{HTML}{D33682}
+\definecolor{solarizedViolet}{HTML}{6C71C4}
+%\definecolor{solarizedBlue}{HTML}{268BD2}
+\definecolor{solarizedBlue}{HTML}{134676}
+\definecolor{solarizedCyan}{HTML}{2AA198}
+\definecolor{solarizedGreen}{HTML}{859900}
+\definecolor{myBlue}{HTML}{162DB0}%{261CA4}
+\setbeamercolor*{item}{fg=myBlue}
+\setbeamercolor{normal text}{fg=solarizedBase03, bg=solarizedBase3}
+\setbeamercolor{alerted text}{fg=myBlue}
+\setbeamercolor{example text}{fg=myBlue, bg=solarizedBase3}
+\setbeamercolor*{frametitle}{fg=solarizedRed}
+\setbeamercolor*{title}{fg=solarizedRed}
+\setbeamercolor{block title}{fg=myBlue, bg=solarizedBase3}
+\setbeameroption{hide notes}
+\setbeamertemplate{note page}[plain]
+\beamertemplatenavigationsymbolsempty
+\usefonttheme{professionalfonts}
+\usefonttheme{serif}
+
+\usepackage{fourier}
+
+\def\vec#1{\mathchoice{\mbox{\boldmath$\displaystyle#1$}}
+{\mbox{\boldmath$\textstyle#1$}}
+{\mbox{\boldmath$\scriptstyle#1$}}
+{\mbox{\boldmath$\scriptscriptstyle#1$}}}
+\definecolor{OwnGrey}{rgb}{0.560,0.000,0.000} % #999999
+\definecolor{OwnBlue}{rgb}{0.121,0.398,0.711} % #1f64b0
+\definecolor{red4}{rgb}{0.5,0,0}
+\definecolor{blue4}{rgb}{0,0,0.5}
+\definecolor{Blue}{rgb}{0,0,0.66}
+\definecolor{LightBlue}{rgb}{0.9,0.9,1}
+\definecolor{Green}{rgb}{0,0.5,0}
+\definecolor{LightGreen}{rgb}{0.9,1,0.9}
+\definecolor{Red}{rgb}{0.9,0,0}
+\definecolor{LightRed}{rgb}{1,0.9,0.9}
+\definecolor{White}{gray}{1}
+\definecolor{Black}{gray}{0}
+\definecolor{LightGray}{gray}{0.8}
+\definecolor{Orange}{rgb}{0.1,0.2,1}
+\setbeamerfont{sidebar right}{size=\scriptsize}
+\setbeamercolor{sidebar right}{fg=Black}
+
+\renewcommand{\emph}[1]{{\textcolor{solarizedRed}{\itshape #1}}}
+
+\newcommand\cA{\mathcal A}
+\newcommand\cB{\mathcal B}
+\newcommand\cC{\mathcal C}
+\newcommand\cD{\mathcal D}
+\newcommand\cE{\mathcal E}
+\newcommand\cF{\mathcal F}
+\newcommand\cG{\mathcal G}
+\newcommand\cH{\mathcal H}
+\newcommand\cI{\mathcal I}
+\newcommand\cJ{\mathcal J}
+\newcommand\cK{\mathcal K}
+\newcommand\cL{\mathcal L}
+\newcommand\cM{\mathcal M}
+\newcommand\cN{\mathcal N}
+\newcommand\cO{\mathcal O}
+\newcommand\cP{\mathcal P}
+\newcommand\cQ{\mathcal Q}
+\newcommand\cR{\mathcal R}
+\newcommand\cS{\mathcal S}
+\newcommand\cT{\mathcal T}
+\newcommand\cU{\mathcal U}
+\newcommand\cV{\mathcal V}
+\newcommand\cW{\mathcal W}
+\newcommand\cX{\mathcal X}
+\newcommand\cY{\mathcal Y}
+\newcommand\cZ{\mathcal Z}
+
+\newcommand\fA{\mathfrak A}
+\newcommand\fB{\mathfrak B}
+\newcommand\fC{\mathfrak C}
+\newcommand\fD{\mathfrak D}
+\newcommand\fE{\mathfrak E}
+\newcommand\fF{\mathfrak F}
+\newcommand\fG{\mathfrak G}
+\newcommand\fH{\mathfrak H}
+\newcommand\fI{\mathfrak I}
+\newcommand\fJ{\mathfrak J}
+\newcommand\fK{\mathfrak K}
+\newcommand\fL{\mathfrak L}
+\newcommand\fM{\mathfrak M}
+\newcommand\fN{\mathfrak N}
+\newcommand\fO{\mathfrak O}
+\newcommand\fP{\mathfrak P}
+\newcommand\fQ{\mathfrak Q}
+\newcommand\fR{\mathfrak R}
+\newcommand\fS{\mathfrak S}
+\newcommand\fT{\mathfrak T}
+\newcommand\fU{\mathfrak U}
+\newcommand\fV{\mathfrak V}
+\newcommand\fW{\mathfrak W}
+\newcommand\fX{\mathfrak X}
+\newcommand\fY{\mathfrak Y}
+\newcommand\fZ{\mathfrak Z}
+
+\newcommand\fa{\mathfrak a}
+\newcommand\fb{\mathfrak b}
+\newcommand\fc{\mathfrak c}
+\newcommand\fd{\mathfrak d}
+\newcommand\fe{\mathfrak e}
+\newcommand\ff{\mathfrak f}
+\newcommand\fg{\mathfrak g}
+\newcommand\fh{\mathfrak h}
+%\newcommand\fi{\mathfrak i}
+\newcommand\fj{\mathfrak j}
+\newcommand\fk{\mathfrak k}
+\newcommand\fl{\mathfrak l}
+\newcommand\fm{\mathfrak m}
+\newcommand\fn{\mathfrak n}
+\newcommand\fo{\mathfrak o}
+\newcommand\fp{\mathfrak p}
+\newcommand\fq{\mathfrak q}
+\newcommand\fr{\mathfrak r}
+\newcommand\fs{\mathfrak s}
+\newcommand\ft{\mathfrak t}
+\newcommand\fu{\mathfrak u}
+\newcommand\fv{\mathfrak v}
+\newcommand\fw{\mathfrak w}
+\newcommand\fx{\mathfrak x}
+\newcommand\fy{\mathfrak y}
+\newcommand\fz{\mathfrak z}
+
+\newcommand\vA{\vec A}
+\newcommand\vB{\vec B}
+\newcommand\vC{\vec C}
+\newcommand\vD{\vec D}
+\newcommand\vE{\vec E}
+\newcommand\vF{\vec F}
+\newcommand\vG{\vec G}
+\newcommand\vH{\vec H}
+\newcommand\vI{\vec I}
+\newcommand\vJ{\vec J}
+\newcommand\vK{\vec K}
+\newcommand\vL{\vec L}
+\newcommand\vM{\vec M}
+\newcommand\vN{\vec N}
+\newcommand\vO{\vec O}
+\newcommand\vP{\vec P}
+\newcommand\vQ{\vec Q}
+\newcommand\vR{\vec R}
+\newcommand\vS{\vec S}
+\newcommand\vT{\vec T}
+\newcommand\vU{\vec U}
+\newcommand\vV{\vec V}
+\newcommand\vW{\vec W}
+\newcommand\vX{\vec X}
+\newcommand\vY{\vec Y}
+\newcommand\vZ{\vec Z}
+
+\newcommand\va{\vec a}
+\newcommand\vb{\vec b}
+\newcommand\vc{\vec c}
+\newcommand\vd{\vec d}
+\newcommand\ve{\vec e}
+\newcommand\vf{\vec f}
+\newcommand\vg{\vec g}
+\newcommand\vh{\vec h}
+\newcommand\vi{\vec i}
+\newcommand\vj{\vec j}
+\newcommand\vk{\vec k}
+\newcommand\vl{\vec l}
+\newcommand\vm{\vec m}
+\newcommand\vn{\vec n}
+\newcommand\vo{\vec o}
+\newcommand\vp{\vec p}
+\newcommand\vq{\vec q}
+\newcommand\vr{\vec r}
+\newcommand\vs{\vec s}
+\newcommand\vt{\vec t}
+\newcommand\vu{\vec u}
+\newcommand\vv{\vec v}
+\newcommand\vw{\vec w}
+\newcommand\vx{\vec x}
+\newcommand\vy{\vec y}
+\newcommand\vz{\vec z}
+
+\renewcommand\AA{\mathbb A}
+\newcommand\NN{\mathbb N}
+\newcommand\ZZ{\mathbb Z}
+\newcommand\PP{\mathbb P}
+\newcommand\QQ{\mathbb Q}
+\newcommand\RR{\mathbb R}
+\renewcommand\SS{\mathbb S}
+\newcommand\CC{\mathbb C}
+
+\newcommand{\ord}{\mathrm{ord}}
+\newcommand{\id}{\mathrm{id}}
+\newcommand{\pr}{\mathrm{P}}
+\newcommand{\Vol}{\mathrm{vol}}
+\newcommand\norm[1]{\left\|{#1}\right\|} 
+\newcommand\sign{\mathrm{sign}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand\bc[1]{\left({#1}\right)} 
+\newcommand\cbc[1]{\left\{{#1}\right\}} 
+\newcommand\bcfr[2]{\bc{\frac{#1}{#2}}} 
+\newcommand{\bck}[1]{\left\langle{#1}\right\rangle} 
+\newcommand\brk[1]{\left\lbrack{#1}\right\rbrack} 
+\newcommand\scal[2]{\bck{{#1},{#2}}} 
+\newcommand{\vecone}{\mathbb{1}}
+\newcommand{\tensor}{\otimes}
+\newcommand{\diag}{\mathrm{diag}}
+\newcommand{\ggt}{\mathrm{ggT}}
+\newcommand{\kgv}{\mathrm{kgV}}
+
+\newcommand{\Karonski}{Karo\'nski}
+\newcommand{\Erdos}{Erd\H{o}s}
+\newcommand{\Renyi}{R\'enyi}
+\newcommand{\Lovasz}{Lov\'asz}
+\newcommand{\Juhasz}{Juh\'asz}
+\newcommand{\Bollobas}{Bollob\'as}
+\newcommand{\Furedi}{F\"uredi}
+\newcommand{\Komlos}{Koml\'os}
+\newcommand{\Luczak}{\L uczak}
+\newcommand{\Kucera}{Ku\v{c}era}
+\newcommand{\Szemeredi}{Szemer\'edi}
+
+\renewcommand{\ae}{\"a}
+\renewcommand{\oe}{\"o}
+\newcommand{\ue}{\"u}
+\newcommand{\Ae}{\"A}
+\newcommand{\Oe}{\"O}
+\newcommand{\Ue}{\"U}
+
+\title[Linadi]{Der Miller-Rabin-Test}
+\author[Amin Coja-Oghlan]{Amin Coja-Oghlan}
+\institute[Frankfurt]{JWGUFFM}
+\date{}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+	\begin{block}{Erinnerung}
+		\begin{itemize}
+			\item Der Fermat-Test ist effizient aber unzuverl\ae ssig.
+			\item Wenn die Eingabe eine Primzahl ist, gibt der Fermat-Test stets ``Primzahl'' aus.
+			\item Aber wenn die Eingabe eine Carmichaelzahl ist, k\oe nnte der Fermat-Test auch mit sehr hoher Wahrscheinlichkeit ``Primzahl'' antworten.
+			\item \emph{Ziel:} ein effizienter Primzahltest, der auch mit Carmichaelzahlen zurechtkommt.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+	\begin{block}{Definition}
+		\begin{itemize}
+			\item Sei $n\geq3$ ungerade.
+			\item Sei $k=w_2(n-1)$, so da\ss\ $n-1=2^ku$ f\ue r eine ungerade Zahl $u$.
+			\item Eine Zahl $1<a<n$ hei\ss t \emph{A-Zeuge} f\ue r $n$, falls
+				\begin{align*}
+					a^{u}\not\equiv1\mod n&&\mbox{und}\\
+					a^{u2^i}\not\equiv-1\mod n&&\mbox{f\ue r alle $0\leq i<k$.}
+				\end{align*}
+			\item Andernfalls nennen wir $a$ einen \emph{A-L\ue gner}.
+		\end{itemize}
+	\end{block}
+	\begin{block}{Anmerkung}
+Jeder F-Zeuge ist ein A-Zeuge.	
+	\end{block}
+\end{frame}
+
+
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+	\begin{block}{Algorithmus {\tt MillerRabin}($n$)}
+		\begin{enumerate}
+			\item Wenn $n=2$ gib ``Primzahl'' aus; andernfalls, wenn $n$ gerade ist, gib ``zusammengesetzt'' aus.
+			\item W\ae hle $1<a<n$ zuf\ae llig.
+			\item Wenn $a$ ein A-Zeuge ist, gib ``zusammengesetzt'' aus; sonst gib ``Primzahl'' aus.
+		\end{enumerate}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+	\begin{block}{Laufzeit}
+		\begin{itemize}
+			\item Man kann effizient herausfinden, ob $a$ ein A-Zeuge ist.
+			\item Es gibt insgesamt nur $k\leq\log_2n$ M\oe glichkeiten f\ue r $i$.
+			\item Jede einzelne Bedingung 
+				\begin{align*}
+					a^{u}&\not\equiv1\mod n\\
+					a^{u2^i}&\not\equiv-1\mod n
+				\end{align*}
+				kann mit schnellem Potenzieren nachgepr\ue ft werden.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+	\begin{block}{Lemma}
+		Wenn eine ungerade Zahl $n\geq3$ einen A-Zeugen $a$ besitzt, ist $n$ zusammengesetzt.
+	\end{block}
+	\begin{overprint}
+		\onslide<1>
+		\begin{block}{Beweis}
+			\begin{itemize}
+				\item Sei $b_i=a^{u2^i}$ f\ue r $0\leq i\leq k$.
+				\item Wenn $b_k\not\equiv1\mod1$, ist $a$ ein F-Zeuge; also ist $n$ zusammengesetzt.
+				\item Sonst sei $1\leq i\leq k$ minimal mit $b_i\equiv1\mod n$.
+				\item Weil $a$ ein A-Zeuge ist, gilt 
+					\begin{align*}
+						b_{i-1}&\not\equiv1\mod n\quad\mbox{und}\quad b_{i-1}&\not\equiv-1\mod n&&\mbox{aber}\\
+						b_{i-1}^2&\equiv b_i\equiv1\mod n.
+					\end{align*}
+			\end{itemize}	
+		\end{block}
+		\onslide<2>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Also gilt $n\mid b_{i-1}^2-1=(b_{i-1}-1)(b_{i-1}+1)$.
+				\item Angenommen $n$ w\ae re eine Primzahl.
+				\item Dann schlie\ss en wir
+					\begin{align*}
+						n\mid b_{i-1}-1&&\mbox{oder}&&n\mid b_{i-1}+1.
+					\end{align*}
+				\item Das bedeutet aber
+					\begin{align*}
+						b_{i-1}\equiv-1\mod n&&\mbox{oder}&&b_{i-1}\equiv1\mod n,
+					\end{align*}
+					Widerspruch.
+			\end{itemize}	
+		\end{block}
+		\onslide<3>
+		\begin{block}{Anmerkung}
+			\begin{itemize}
+				\item Aus dem Lemma folgt, da\ss\ $n$ sicher zusammengesetzt ist, wenn der Miller-Rabin-Test ``zusammengesetzt'' ausgibt.	
+				\item Auf eine Primzahl $n$ angewandt gibt Miller-Rabin also stets ``Primzahl'' aus.
+			\end{itemize}
+		\end{block}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+	\begin{block}{Satz}
+		Wenn $n>3$ zusammengesetzt ist, gibt der Miller-Rabin-Test mit Wahrscheinlichkeit mindestens $\frac{1}{2}$ ``zusammengesetzt'' aus.
+	\end{block}
+	\begin{overprint}
+		\onslide<1>
+		\begin{block}{Beweis}
+			\begin{itemize}
+				\item Wir d\ue rfen annehmen, da\ss\ $n$ eine Carmichaelzahl ist.
+				\item Definiere
+					\begin{align*}
+						i_0=\max\cbc{i\geq0:\mbox{es gibt einen A-L\ue gner $a$ mit }a^{u2^i}\equiv-1\mod n}.
+					\end{align*}
+				\item Sei $a_0$ entsprechend ein A-L\ue gner mit
+					\begin{align*}
+						a_0^{u2^{i_0}}\equiv-1\mod n.
+					\end{align*}
+			\end{itemize}
+		\end{block}
+		\onslide<2>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Weil $n$ eine Carmichaelzahl ist, gilt
+					\begin{align*}
+						a_0^{n-1}=a_0^{u2^k}\equiv1\mod n.
+					\end{align*}
+				\item Insbesondere sehen wir, da\ss\ $i_0<k$.
+				\item Definiere nun
+					\begin{align*}
+						H&=\cbc{a+n\ZZ:a^{u2^{i_0}}\equiv\pm1\mod n}.
+					\end{align*}
+			\end{itemize}
+		\end{block}
+		\onslide<3>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item $H$ enth\ae lt alle A-L\ue gner $a$.
+				\item Denn falls $a^u\equiv1\mod n$, folgt $a^{u2^{i_0}}\equiv1\mod n$.
+				\item Sonst gilt $a^{u2^i}\equiv-1\mod n$ f\ue r ein $i\leq i_0$.
+				\item Also $a^{u2^{i_0}}\equiv\pm1\mod n$.
+				\item Jedenfalls sehen wir, da\ss\ $a\in H$.
+			\end{itemize}
+		\end{block}
+		\onslide<4>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item $H$ ist eine Untergruppe von $\ZZ_n^\times$.
+				\item Denn wenn $a+n\ZZ,b+n\ZZ\in H$, dann gilt
+					\begin{align*}
+						\bc{(a+n\ZZ)^{-1}(b+n\ZZ)}^{u2^{i_0}}&= (a+n\ZZ)^{u2^{i_0}}(b+n\ZZ)^{u2^{i_0}}\\&=(\pm1+n\ZZ)\cdot(\pm1+n\ZZ)=\pm1+n\ZZ.
+					\end{align*}
+				\item Au\ss erdem gilt $1+n\ZZ\in H$.
+			\end{itemize}
+		\end{block}
+		\onslide<5>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Es gilt $H\neq\ZZ_n^\times$.
+				\item Denn weil $n$ eine Carmichaelzahl ist, k\oe nnen wir $n$ schreiben als
+					\begin{align*}
+						n=p\cdot m&&\mbox{mit $p$ prim und }\ggt(p,m)=1.
+					\end{align*}
+				\item Nach dem Chinesischen Restsatz gibt es $a\in\NN$ mit
+					\begin{align*}
+						a\equiv a_0\mod p&&\mbox{und}&&a\equiv1\mod m.
+					\end{align*}
+				\item Wir behaupten, da\ss\ $a+n\ZZ\in\ZZ_n^\times \setminus H$.
+			\end{itemize}
+		\end{block}
+		\onslide<6>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Denn einerseits gilt $\ggt(a,n)=1$, also $a+n\ZZ\in\ZZ_n^\times$.
+				\item Andererseits erhalten wir
+					\begin{align*}
+						a^{u2^{i_0}}&\equiv-1\mod p\\
+						a^{u2^{i_0}}&\equiv1\mod m.
+					\end{align*}
+				\item Also schlie\ss en wir, da\ss
+					\begin{align*}
+						a\not\equiv-1\mod n&&\mbox{und}&&a\not\equiv1\mod n.
+					\end{align*}
+				\item Folglich gilt $a\not\in H$.	
+			\end{itemize}
+		\end{block}
+		\onslide<7>
+		\begin{block}{Beweis (Fortsetzung)}
+			\begin{itemize}
+				\item Aus dem Satz von Lagrange folgt also
+					\begin{align*}
+						|H|\leq|\ZZ_n^\times|/2.
+					\end{align*}
+				\item Folglich trifft der Algorithmus mit Wahrscheinlichkeit mindestens $\frac{1}{2}$ einen A-Zeugen.
+			\end{itemize}
+		\end{block}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}\frametitle{Der Miller-Rabin-Test}
+\begin{block}{Erzeugen gro\ss er Primzahlen}
+\begin{itemize}
+\item Angenommen wir m\oe chten eine Primzahl $p\leq n$ zuf\ae llig erzeugen.
+\item W\ae hle dazu einfach $1\leq p\leq n$ zuf\ae llig.
+\item Wende den Miller-Rabin-Test an, um zu pr\ue fen, ob $p$ eine Primzahl ist.
+\item Um die Erfolgswahrscheinlichkeit zu erh\oe hen, wiederhole den Test mehrfach.
+\item Wenn nicht, wiederhole.
+\item Aus dem Primzahlsatz folgt, da\ss\ wir nach etwa $\log n$ Versuchen wahrscheinlich auf eine Primzahl sto\ss en.
+\item Das Verfahren ist also effizient.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}\frametitle{Zusammenfassung}
+\begin{itemize}
+\item Der Miller-Rabin-Test ist ein effizienter Monte-Carlo-Primzahltest.
+\item Er kann verwendet werden, um gro\ss e Primzahlen effizient zuf\ae llig zu erzeugen.
+\end{itemize}
+\end{frame}
+
+\end{document}
